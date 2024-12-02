@@ -43,7 +43,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
   <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
-
+ 
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
@@ -115,17 +115,27 @@
                   <a class="nav-link" href="contact.php">Elérhetőség</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="login_form.php">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>
-                      Bejelentkezés
-                    </span>
-                  </a>
+                      <?php
+                      if(!isset($_SESSION["uid"])){
+                        print('<a class="nav-link" href="login_form.php">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>bejelentkezés</span>
+                        </a>');
+                      }
+                      else{
+                        print('<a class="nav-link" href="logout.php">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>kijelentkezés</span>
+                        </a>');
+                      }
+                      ?>
                 </li>
                 <form class="form-inline justify-content-center">
-                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </button>
+                  <?php
+                        
+                  ?>
+                       
+
                 </form>
               </ul>
             </div>

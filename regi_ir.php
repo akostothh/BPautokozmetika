@@ -18,4 +18,6 @@ VALUES 		 (NULL, '$_POST[email]', '$_POST[txt]',   '$upd',         '', 'NOW()', 
 	" );
 
 	mysqli_close( $adb );
+
+	echo"<script>location.href='index.php'</script>"
 ?>
