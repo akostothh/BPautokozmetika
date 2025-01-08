@@ -1,4 +1,6 @@
 
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
 <div class="container">
 	<div class="screen">
 		<div class="screen__content">
@@ -18,7 +20,7 @@
 </form>
 
 			<div class="social-login">
-				<h3>log in via</h3>
+			<input class="reg" type='button' value='Regisztráció' onclick=' location.href="reg_form.php" '>
 				<div class="social-icons">
 
 				</div>
@@ -33,12 +35,6 @@
 	</div>
 </div>
 
-
-
-
-
-<input class="reg" type='button' value='Regisztráció' onclick=' location.href="reg_form.php" '>
-
 <style>
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
@@ -51,7 +47,20 @@
 }
 
 body {
-	background-image: url("./images/fokep2.jpg");		
+	background-image: url("./images/fokep2.jpg");
+	background-size: cover;
+	position: relative;
+}
+
+body::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.7)));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));	z-index: -1;
 }
 
 .container {
@@ -62,11 +71,11 @@ body {
 }
 
 .screen {		
-	background: linear-gradient(90deg, rgb(92, 160, 188), rgb(92, 160, 188));		
+	background: linear-gradient(90deg, grey, black);		
 	position: relative;	
 	height: 600px;
 	width: 360px;	
-	box-shadow: 0px 0px 24px #5C5696;
+	box-shadow: 0px 0px 24px black;
 }
 
 .screen__content {
@@ -103,7 +112,7 @@ body {
 .screen__background__shape2 {
 	height: 220px;
 	width: 220px;
-	background: black;	
+	background: grey;	
 	top: -172px;
 	right: 0;	
 	border-radius: 32px;
@@ -112,7 +121,7 @@ body {
 .screen__background__shape3 {
 	height: 540px;
 	width: 190px;
-	background: linear-gradient(270deg, black, black);
+	background: linear-gradient(270deg, grey, grey);
 	top: -24px;
 	right: 0;	
 	border-radius: 32px;
@@ -121,7 +130,7 @@ body {
 .screen__background__shape4 {
 	height: 400px;
 	width: 200px;
-	background: black;	
+	background: grey;	
 	top: 420px;
 	right: 50px;	
 	border-radius: 60px;
@@ -153,13 +162,20 @@ body {
 	font-weight: 700;
 	width: 75%;
 	transition: .2s;
+	
+
 }
+
+.login__input::placeholder{
+	color: white;
+}
+
 
 .login__input:active,
 .login__input:focus,
 .login__input:hover {
 	outline: none;
-	border-bottom-color: #6A679E;
+	border-bottom-color: black;
 }
 
 .login__submit {
@@ -168,14 +184,13 @@ body {
 	margin-top: 30px;
 	padding: 16px 20px;
 	border-radius: 26px;
-	border: 1px solid #D4D3E8;
+	border: 1px solid grey;
 	text-transform: uppercase;
 	font-weight: 700;
 	display: flex;
 	align-items: center;
 	width: 100%;
-	color: #4C489D;
-	box-shadow: 0px 2px 2px #5C5696;
+	color: black;
 	cursor: pointer;
 	transition: .2s;
 }

@@ -4,17 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Shop</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
-<!-- fonts style -->
-<!--owl slider stylesheet -->
-<!-- nice select -->
-<!-- font awesome style -->
 <link href="css/font-awesome.min.css" rel="stylesheet" />
-
-<!-- Custom styles for this template -->
 <link href="css/style.css" rel="stylesheet" />
-<!-- responsive style -->
+<link href="css/responsive.css" rel="stylesheet" />
+<link href="css/bootstrap" rel="stylesheet" />
+
+
+
     </head>
 <body>
 
@@ -83,7 +80,7 @@
                   <a class="nav-link" href="team.php"> Csapat </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.php">Elérhetőség</a>
+                  <a class="nav-link" href="shop.php">Bolt</a>
                 </li>
                 <li class="nav-item">
                       <?php
@@ -107,10 +104,79 @@
         
 
         <section id="contact">
-           
             
             <section id="products">
        
+            <?php
+            
+            include("kapcsolat.php");
+
+            $result = mysqli_query( $adb , "
+                
+            SELECT * FROM termekek
+
+              " );
+            $datas = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            for($i = 0; $i < mysqli_num_rows($result); $i = $i + 1){
+              $nev = utf8_encode($datas["nev"]);
+              if($i % 3 == 0){
+                echo "<div class='product-grid'>";
+                echo "
+                <div class='product'>
+                    <img src='https://via.placeholder.com/150' alt='$nev'>
+                    <h3>$nev</h3>
+                    <p>Ár: $datas[ar] Ft</p>
+                    <button>Kosárba</button>
+                </div>
+                ";
+              }else if($i % 3 == 2){
+                echo "
+                <div class='product'>
+                    <img src='https://via.placeholder.com/150' alt='$nev'>
+                    <h3>$nev</h3>
+                    <p>Ár: $datas[ar] Ft</p>
+                    <button>Kosárba</button>
+                </div>
+                ";
+                echo "</div>";
+              }
+              else{
+                echo "
+                <div class='product'>
+                    <img src='https://via.placeholder.com/150' alt='$nev'>
+                    <h3>$nev</h3>
+                    <p>Ár: $datas[ar] Ft</p>
+                    <button>Kosárba</button>
+                </div>
+                ";
+              }
+              $datas = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            }
+
+              mysqli_close( $adb );
+            
+            ?>
+            <!-- <div class="product-grid">
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Termék 1">
+                    <h3>Termék 1</h3>
+                    <p>Ár: 5000 Ft</p>
+                    <button>Kosárba</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Termék 2">
+                    <h3>Termék 2</h3>
+                    <p>Ár: 7000 Ft</p>
+                    <button>Kosárba</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Termék 3">
+                    <h3>Termék 3</h3>
+                    <p>Ár: 6000 Ft</p>
+                    <button>Kosárba</button>
+                </div>
+            </div>
+                   
             <div class="product-grid">
                 <div class="product">
                     <img src="https://via.placeholder.com/150" alt="Termék 1">
@@ -131,6 +197,69 @@
                     <button>Kosárba</button>
                 </div>
             </div>
+                   
+            <div class="product-grid">
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Termék 1">
+                    <h3>Termék 1</h3>
+                    <p>Ár: 5000 Ft</p>
+                    <button>Kosárba</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Termék 2">
+                    <h3>Termék 2</h3>
+                    <p>Ár: 7000 Ft</p>
+                    <button>Kosárba</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Termék 3">
+                    <h3>Termék 3</h3>
+                    <p>Ár: 6000 Ft</p>
+                    <button>Kosárba</button>
+                </div>
+            </div>
+                   
+            <div class="product-grid">
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Termék 1">
+                    <h3>Termék 1</h3>
+                    <p>Ár: 5000 Ft</p>
+                    <button>Kosárba</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Termék 2">
+                    <h3>Termék 2</h3>
+                    <p>Ár: 7000 Ft</p>
+                    <button>Kosárba</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Termék 3">
+                    <h3>Termék 3</h3>
+                    <p>Ár: 6000 Ft</p>
+                    <button>Kosárba</button>
+                </div>
+            </div>
+                   
+            <div class="product-grid">
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Termék 1">
+                    <h3>Termék 1</h3>
+                    <p>Ár: 5000 Ft</p>
+                    <button>Kosárba</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Termék 2">
+                    <h3>Termék 2</h3>
+                    <p>Ár: 7000 Ft</p>
+                    <button>Kosárba</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Termék 3">
+                    <h3>Termék 3</h3>
+                    <p>Ár: 6000 Ft</p>
+                    <button>Kosárba</button>
+                </div>
+            </div> -->
         </section>
         </section>
         
@@ -171,9 +300,6 @@ nav ul li a {
     text-decoration: none;
 }
 
-main {
-    padding: 1rem;
-}
 
 h2 {
     color: #007BFF;
@@ -184,10 +310,12 @@ h2 {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     margin: 2rem 0;
+    border-color: red;
+    border: 200 px
 }
 
 .product {
-    border: 1px solid #ddd;
+    border: 1px solid black;
     border-radius: 5px;
     padding: 1rem;
     text-align: center;

@@ -12,7 +12,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/fevicon.png" type="image/x-icon">
-  <title>Finter</title>
+  <title>Autokozmetika BP</title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -101,8 +101,8 @@
                 <li class="nav-item">
                   <a class="nav-link" href="team.php"> Csapat </a>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="contact.php"> Elérhetőség <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                  <a class="nav-link" href="shop.php">Bolt</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
@@ -112,11 +112,6 @@
                     </span>
                   </a>
                 </li>
-                <form class="form-inline justify-content-center">
-                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </button>
-                </form>
               </ul>
             </div>
           </nav>

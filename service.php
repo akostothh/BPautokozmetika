@@ -63,15 +63,7 @@
             </a>
           </div>
           <div class="social_box">
-            <a href="">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-linkedin" aria-hidden="true"></i>
-            </a>
+
             <a href="">
               <i class="fa fa-instagram" aria-hidden="true"></i>
             </a>
@@ -102,7 +94,7 @@
                   <a class="nav-link" href="team.php"> Csapat </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.php">Elérhetőség</a>
+                  <a class="nav-link" href="shop.php">Bolt</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
@@ -112,11 +104,6 @@
                     </span>
                   </a>
                 </li>
-                <form class="form-inline justify-content-center">
-                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </button>
-                </form>
               </ul>
             </div>
           </nav>
