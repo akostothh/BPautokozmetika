@@ -18,13 +18,7 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
   <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <!-- nice select -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
-  <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
 
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
@@ -38,78 +32,7 @@
       <img src="images/hero-bg.jpg" alt="">
     </div>
     <!-- header section strats -->
-    <header class="header_section">
-      <div class="header_top">
-        <div class="container-fluid header_top_container">
-
-          <div class="contact_nav">
-            <a href="">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
-              <span>
-                Lokáció
-              </span>
-            </a>
-            <a href="">
-              <i class="fa fa-phone" aria-hidden="true"></i>
-              <span>
-                Telefonszám : +36 2960830
-              </span>
-            </a>
-            <a href="">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-              <span>
-              bpkozmetika@gmail.com
-              </span>
-            </a>
-          </div>
-          <div class="social_box">
-
-            <a href="">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="header_bottom">
-        <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand " href="index.php"> Autokozmetika BP </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav  ">
-                <li class="nav-item ">
-                  <a class="nav-link" href="index.php">Főoldal </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.php"> Rólunk</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="service.php">Szolgáltatások <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="team.php"> Csapat </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="shop.php">Bolt</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>
-                      Bejelentkezés
-                    </span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </header>
+   
     <!-- end header section -->
 
   </div>
@@ -117,246 +40,63 @@
   <!-- service section -->
 
   <section class="service_section layout_padding">
-    <div class="container">
-      <div class="heading_container heading_center ">
-        <h2 class="">
-          Szolgáltatások
-        </h2>
-        <p class="col-lg-8 px-0">
-          If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-        </p>
-      </div>
-      <div class="service_container">
-        <div class="carousel-wrap ">
-          <div class="service_owl-carousel owl-carousel">
-            <div class="item">
-              <div class="box ">
-                <div class="img-box">
-                  <img src="images/s1.png" alt="" />
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    Home Welding
-                  </h5>
-                  <p>
-                    when looking at its layout. The point of using Lorem Ipsum is
-                    that it has a more-or-less normal
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="box ">
-                <div class="img-box">
-                  <img src="images/s4.png" alt="" />
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    Machine Welding
-                  </h5>
-                  <p>
-                    when looking at its layout. The point of using Lorem Ipsum is
-                    that it has a more-or-less normal
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="box ">
-                <div class="img-box">
-                  <img src="images/s6.png" alt="" />
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    Car Welding
-                  </h5>
-                  <p>
-                    when looking at its layout. The point of using Lorem Ipsum is
-                    that it has a more-or-less normal
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="box ">
-                <div class="img-box">
-                  <img src="images/s1.png" alt="" />
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    Home Welding
-                  </h5>
-                  <p>
-                    when looking at its layout. The point of using Lorem Ipsum is
-                    that it has a more-or-less normal
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="box ">
-                <div class="img-box">
-                  <img src="images/s4.png" alt="" />
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    Machine Welding
-                  </h5>
-                  <p>
-                    when looking at its layout. The point of using Lorem Ipsum is
-                    that it has a more-or-less normal
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="box ">
-                <div class="img-box">
-                  <img src="images/s6.png" alt="" />
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    Car Welding
-                  </h5>
-                  <p>
-                    when looking at its layout. The point of using Lorem Ipsum is
-                    that it has a more-or-less normal
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="btn-box">
-        <a href="">
-          Tudj meg többet!
-        </a>
-      </div>
-    </div>
+  <table>
+        <tr>
+            <td>1,1</td>
+            <td>1,2</td>
+            <td>1,3</td>
+            <td>1,4</td>
+            <td>1,5</td>
+        </tr>
+        <tr>
+            <td>2,1</td>
+            <td>2,2</td>
+            <td>2,3</td>
+            <td>2,4</td>
+            <td>2,5</td>
+        </tr>
+        <tr>
+            <td>3,1</td>
+            <td>3,2</td>
+            <td>3,3</td>
+            <td>3,4</td>
+            <td>3,5</td>
+        </tr>
+        <tr>
+            <td>4,1</td>
+            <td>4,2</td>
+            <td>4,3</td>
+            <td>4,4</td>
+            <td>4,5</td>
+        </tr>
+        <tr>
+            <td>5,1</td>
+            <td>5,2</td>
+            <td>5,3</td>
+            <td>5,4</td>
+            <td>5,5</td>
+        </tr>
+        <tr>
+            <td>6,1</td>
+            <td>6,2</td>
+            <td>6,3</td>
+            <td>6,4</td>
+            <td>6,5</td>
+        </tr>
+        <tr>
+            <td>7,1</td>
+            <td>7,2</td>
+            <td>7,3</td>
+            <td>7,4</td>
+            <td>7,5</td>
+        </tr>
+    </table>
+      
   </section>
 
   <!-- service section ends -->
 
-  <!-- info section -->
-  <section class="info_section ">
-    <div class="container">
-      <div class="info_top">
-        <div class="row">
-          <div class="col-md-3 ">
-            <a class="navbar-brand" href="index.php">
-              Autokozmetika BP
-            </a>
-          </div>
-          <div class="col-md-5 ">
-            <div class="info_contact">
-              <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>
-                  Lokáció
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>
-                  +36 2960830
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4 ">
-            <div class="social_box">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="info_bottom">
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <div class="info_detail">
-              <h5>
-                Cég
-              </h5>
-              <p>
-                Randomised words which don't look even slightly believable. If you are going to use a passage of
-                Lorem
-                Ipsum, you need to be sure
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="info_form">
-              <h5>
-                Újdonságok
-              </h5>
-              <form action="">
-                <input type="text" placeholder="Enter Your Email" />
-                <button type="submit">
-                  Feliratkozás
-                </button>
-              </form>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="info_detail">
-              <h5>
-                Szolgáltatások
-              </h5>
-              <p>
-                Randomised words which don't look even slightly believable. If you are going to use a passage of
-                Lorem
-                Ipsum, you need to be sure
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6">
-            <div class="">
-              
-              <ul class="info_menu">
-                <li>
-                  <a href="index.php">
-                    Főoldal
-                  </a>
-                </li>
-                <li>
-                  <a href="about.php">
-                    Rólunk
-                  </a>
-                </li>
-                <li>
-                  <a href="service.php">
-                    Szolgáltatások
-                  </a>
-                </li>
-                <li>
-                  <a href="team.php">
-                    Csapat
-                  </a>
-                </li>
-                <li class="mb-0">
-                  <a href="contact.php">
-                    Elérhetőség
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+ 
 
   <!-- end info_section -->
 

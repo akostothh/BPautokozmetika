@@ -39,11 +39,11 @@
 }
 
 @media (max-width: 767px) {
-  .header_section .header_top .social_box {
+  . .header_top .social_box {
     display: none;
   }
 
-  .header_section .header_top .contact_nav a span {
+  . .header_top .contact_nav a span {
     font-size: 15px;
   }
 
@@ -86,7 +86,7 @@
 }
 
 @media (max-width: 576px) {
-  .header_section .header_top .contact_nav a span {
+  . .header_top .contact_nav a span {
     display: none;
   }
 

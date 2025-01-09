@@ -18,13 +18,7 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
   <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <!-- nice select -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
-  <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
 
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
@@ -38,79 +32,7 @@
       <img src="images/hero-bg.jpg" alt="">
     </div>
     <!-- header section strats -->
-    <header class="header_section">
-      <div class="header_top">
-        <div class="container-fluid header_top_container">
 
-          <div class="contact_nav">
-            <a href="">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
-              <span>
-                Lokáció
-              </span>
-            </a>
-            <a href="">
-              <i class="fa fa-phone" aria-hidden="true"></i>
-              <span>
-                Telefonszám : +36 302960830
-              </span>
-            </a>
-            <a href="">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-              <span>
-              bpkozmetika@gmail.com
-              </span>
-            </a>
-          </div>
-          <div class="social_box">
-
-            <a href="">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="header_bottom">
-        <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand " href="index.php"> Autokozmetika BP </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav  ">
-                <li class="nav-item ">
-                  <a class="nav-link" href="index.php">Főoldal </a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="about.php"> Rólunk <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="service.php">Szolgáltatások</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="team.php"> Csapat </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="shop.php">Bolt</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>
-                      Bejelentkezés
-                    </span>
-                  </a>
-                </li>
-
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </header>
     <!-- end header section -->
   </div>
 
@@ -128,16 +50,28 @@
               </h2>
             </div>
             <p class="detail_p_mt">
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, orThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, orThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or
+            Üdvözöljük autókozmetikánk világában, ahol az autók iránti szenvedély és a minőségi szolgáltatások találkoznak! Cégünk azzal a céllal jött létre, hogy a járműtulajdonosok számára professzionális és megbízható megoldásokat nyújtsunk az autók tisztításában, ápolásában és hosszú távú védelmében.<br><br>
+
+Hisszük, hogy minden autó megérdemli a legjobb gondoskodást, legyen szó napi használatról, különleges eseményekről vagy akár eladás előtti felkészítésről. Szolgáltatásaink között megtalálható minden, ami ahhoz szükséges, hogy autója újszerű állapotban ragyogjon: a külső mosástól és polírozástól kezdve a kárpittisztításon és bőrápoláson át egészen a kerámia- és nanotechnológiás bevonatok felviteléig.<br><br>
+
+
+
+Miért válasszon minket?<br>
+
+Szakértelem és tapasztalat: Csapatunk több éves tapasztalattal rendelkezik az autókozmetika területén, és folyamatosan képzi magát, hogy a legújabb technológiákat és eljárásokat alkalmazhassa.
+Egyedi megoldások: Minden jármű más és más, ezért szolgáltatásainkat mindig az autó állapotához és az ügyfél igényeihez igazítjuk.
+Környezetbarát szemlélet: Nagy hangsúlyt fektetünk a fenntarthatóságra, ezért környezetbarát tisztítószereket és víztakarékos megoldásokat alkalmazunk.
+Elégedett ügyfelek: Számunkra az Ön elégedettsége a legfontosabb, ezért minden munkánk során a legmagasabb színvonalat képviseljük.<br><br>
+
+
+Látogasson el hozzánk, és tapasztalja meg, mit jelent az autókozmetika új dimenziója! Legyen szó teljes körű tisztításról, speciális védelemről vagy különleges igényekről, mi készen állunk arra, hogy autójának a legjobbat nyújtsuk. Bízza ránk járművét, és mi garantáljuk, hogy az eredménnyel maximálisan elégedett lesz!<br><br>
             </p>
-            <a href="about.php" class="">
-              Tudj meg többet
-            </a>
+            
           </div>
         </div>
         <div class="col-md-6 px-0">
           <div class="img-box ">
-            <img src="images/about-img.jpg" class="box_img" alt="about img">
+            <img src="kepek/kocsi.webp" class="box_img" alt="about img">
           </div>
         </div>
       </div>
@@ -146,117 +80,7 @@
 
   <!-- about section ends -->
 
-  <!-- info section -->
-  <section class="info_section ">
-    <div class="container">
-      <div class="info_top">
-        <div class="row">
-          <div class="col-md-3 ">
-            <a class="navbar-brand" href="index.php">
-              Autokozmetika BP
-            </a>
-          </div>
-          <div class="col-md-5 ">
-            <div class="info_contact">
-              <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>
-                  Lokáció
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>
-                  +36 302960830
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4 ">
-            <div class="social_box">
 
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="info_bottom">
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <div class="info_detail">
-              <h5>
-                Cég
-              </h5>
-              <p>
-                Randomised words which don't look even slightly believable. If you are going to use a passage of
-                Lorem
-                Ipsum, you need to be sure
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="info_form">
-              <h5>
-                Újdonságok
-              </h5>
-              <form action="">
-                <input type="text" placeholder="Enter Your Email" />
-                <button type="submit">
-                 Feliratkozás
-                </button>
-              </form>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="info_detail">
-              <h5>
-                Szolgáltatások
-              </h5>
-              <p>
-                Randomised words which don't look even slightly believable. If you are going to use a passage of
-                Lorem
-                Ipsum, you need to be sure
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6">
-            <div class="">
-              
-              <ul class="info_menu">
-                <li>
-                  <a href="index.php">
-                    Főoldal
-                  </a>
-                </li>
-                <li>
-                  <a href="about.php">
-                    Rólunk
-                  </a>
-                </li>
-                <li>
-                  <a href="service.php">
-                    Szolgáltatások
-                  </a>
-                </li>
-                <li>
-                  <a href="team.php">
-                    Csapat
-                  </a>
-                </li>
-                <li class="mb-0">
-                  <a href="contact.php">
-                    Elérhetőség
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- end info_section -->
 

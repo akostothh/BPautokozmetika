@@ -8,8 +8,7 @@
 <link href="css/font-awesome.min.css" rel="stylesheet" />
 <link href="css/style.css" rel="stylesheet" />
 <link href="css/responsive.css" rel="stylesheet" />
-<link href="css/bootstrap" rel="stylesheet" />
-
+<link href="css/bootstrap.css" rel="stylesheet" />
 
 
     </head>
@@ -17,250 +16,65 @@
 
 
     <main>
-        <header>
-            
-    <div class="hero_area">
-    <div class="hero_bg_box">
-
-    </div>
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="header_top">
-        <div class="container-fluid header_top_container">
-
-          <div class="contact_nav">
-            <a href="">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
-              <span>
-                Lokáció
-              </span>
-            </a>
-            <a href="">
-              <i class="fa fa-phone" aria-hidden="true"></i>
-              <span>
-                Telefonszám : +36 302960830
-              </span>
-            </a>
-            <a href="">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-              <span>
-                bpkozmetika@gmail.com
-              </span>
-            </a>
-          </div>
-          <div class="social_box">
-      
-            <a href="">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="header_bottom">
-        <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand " href="index.php"> Autokozmetika BP </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav  ">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.php">Főoldal <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.php"> Rólunk</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="service.php">Szolgáltatások</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="team.php"> Csapat </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="shop.php">Bolt</a>
-                </li>
-                <li class="nav-item">
-                      <?php
-                      if(!isset($_SESSION["uid"])){
-                        print('<a class="nav-link" href="login_form.php">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        <span>bejelentkezés</span>
-                        </a>');
-                      }
-                      else{
-                        print('<a class="nav-link" href="logout.php">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        <span>kijelentkezés</span>
-                        </a>');
-                      }
-                      ?>
-                </li>
-                <form class="form-inline justify-content-center">
-
-
         
+            
 
+    
         <section id="contact">
             
-            <section id="products">
+        <section id="products">
        
-            <?php
-            
-            include("kapcsolat.php");
+       <?php
+       
+       include("kapcsolat.php");
 
-            $result = mysqli_query( $adb , "
-                
-            SELECT * FROM termekek
+       $result = mysqli_query( $adb , "
+           
+       SELECT * FROM termekek
 
-              " );
-            $datas = mysqli_fetch_array($result, MYSQLI_ASSOC);
-            for($i = 0; $i < mysqli_num_rows($result); $i = $i + 1){
-              $nev = utf8_encode($datas["nev"]);
-              if($i % 3 == 0){
-                echo "<div class='product-grid'>";
-                echo "
-                <div class='product'>
-                    <img src='https://via.placeholder.com/150' alt='$nev'>
-                    <h3>$nev</h3>
-                    <p>Ár: $datas[ar] Ft</p>
-                    <button>Kosárba</button>
-                </div>
-                ";
-              }else if($i % 3 == 2){
-                echo "
-                <div class='product'>
-                    <img src='https://via.placeholder.com/150' alt='$nev'>
-                    <h3>$nev</h3>
-                    <p>Ár: $datas[ar] Ft</p>
-                    <button>Kosárba</button>
-                </div>
-                ";
-                echo "</div>";
-              }
-              else{
-                echo "
-                <div class='product'>
-                    <img src='https://via.placeholder.com/150' alt='$nev'>
-                    <h3>$nev</h3>
-                    <p>Ár: $datas[ar] Ft</p>
-                    <button>Kosárba</button>
-                </div>
-                ";
-              }
-              $datas = mysqli_fetch_array($result, MYSQLI_ASSOC);
-            }
+         " );
+       $datas = mysqli_fetch_array($result, MYSQLI_ASSOC);
+       for($i = 0; $i < mysqli_num_rows($result); $i = $i + 1){
+         $nev = utf8_encode($datas["nev"]);
+         if($i % 3 == 0){
+           echo "<div class='product-grid'>";
+           echo "
+           <div class='product'>
+               <img src='https://via.placeholder.com/150' alt='$nev'>
+               <h3>$nev</h3>
+               <p>Ár: $datas[ar] Ft</p>
+               <button>Kosárba</button>
+           </div>
+           ";
+         }else if($i % 3 == 2){
+           echo "
+           <div class='product'>
+               <img src='https://via.placeholder.com/150' alt='$nev'>
+               <h3>$nev</h3>
+               <p>Ár: $datas[ar] Ft</p>
+               <button>Kosárba</button>
+           </div>
+           ";
+           echo "</div>";
+         }
+         else{
+           echo "
+           <div class='product'>
+               <img src='https://via.placeholder.com/150' alt='$nev'>
+               <h3>$nev</h3>
+               <p>Ár: $datas[ar] Ft</p>
+               <button>Kosárba</button>
+           </div>
+           ";
+         }
+         $datas = mysqli_fetch_array($result, MYSQLI_ASSOC);
+       }
 
-              mysqli_close( $adb );
-            
-            ?>
-            <!-- <div class="product-grid">
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Termék 1">
-                    <h3>Termék 1</h3>
-                    <p>Ár: 5000 Ft</p>
-                    <button>Kosárba</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Termék 2">
-                    <h3>Termék 2</h3>
-                    <p>Ár: 7000 Ft</p>
-                    <button>Kosárba</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Termék 3">
-                    <h3>Termék 3</h3>
-                    <p>Ár: 6000 Ft</p>
-                    <button>Kosárba</button>
-                </div>
-            </div>
-                   
-            <div class="product-grid">
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Termék 1">
-                    <h3>Termék 1</h3>
-                    <p>Ár: 5000 Ft</p>
-                    <button>Kosárba</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Termék 2">
-                    <h3>Termék 2</h3>
-                    <p>Ár: 7000 Ft</p>
-                    <button>Kosárba</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Termék 3">
-                    <h3>Termék 3</h3>
-                    <p>Ár: 6000 Ft</p>
-                    <button>Kosárba</button>
-                </div>
-            </div>
-                   
-            <div class="product-grid">
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Termék 1">
-                    <h3>Termék 1</h3>
-                    <p>Ár: 5000 Ft</p>
-                    <button>Kosárba</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Termék 2">
-                    <h3>Termék 2</h3>
-                    <p>Ár: 7000 Ft</p>
-                    <button>Kosárba</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Termék 3">
-                    <h3>Termék 3</h3>
-                    <p>Ár: 6000 Ft</p>
-                    <button>Kosárba</button>
-                </div>
-            </div>
-                   
-            <div class="product-grid">
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Termék 1">
-                    <h3>Termék 1</h3>
-                    <p>Ár: 5000 Ft</p>
-                    <button>Kosárba</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Termék 2">
-                    <h3>Termék 2</h3>
-                    <p>Ár: 7000 Ft</p>
-                    <button>Kosárba</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Termék 3">
-                    <h3>Termék 3</h3>
-                    <p>Ár: 6000 Ft</p>
-                    <button>Kosárba</button>
-                </div>
-            </div>
-                   
-            <div class="product-grid">
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Termék 1">
-                    <h3>Termék 1</h3>
-                    <p>Ár: 5000 Ft</p>
-                    <button>Kosárba</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Termék 2">
-                    <h3>Termék 2</h3>
-                    <p>Ár: 7000 Ft</p>
-                    <button>Kosárba</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Termék 3">
-                    <h3>Termék 3</h3>
-                    <p>Ár: 6000 Ft</p>
-                    <button>Kosárba</button>
-                </div>
-            </div> -->
-        </section>
+         mysqli_close( $adb );
+       
+       ?>
+   </section>
+        
         </section>
         
     </main>
@@ -277,28 +91,12 @@ body {
     padding: 0;
     line-height: 1.6;
     color: white;
-    background-color: black;
+
 }
 
 
-header h1 {
-    margin: 0;
-}
 
-nav ul {
-    list-style: none;
-    padding: 0;
-}
 
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
 
 
 h2 {
@@ -315,7 +113,7 @@ h2 {
 }
 
 .product {
-    border: 1px solid black;
+  
     border-radius: 5px;
     padding: 1rem;
     text-align: center;
@@ -346,11 +144,6 @@ button:hover {
     background: #0056b3;
 }
 
-footer {
-    text-align: center;
-    padding: 1rem;
-    background: #f4f4f4;
-    margin-top: 2rem;
-}
+
 
     </style>

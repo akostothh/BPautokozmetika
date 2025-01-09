@@ -121,12 +121,12 @@ a:focus {
   min-height: auto;
 }
 
-.header_section .header_top {
+. .header_top {
   padding: 15px 0;
   border-bottom: 1px solid #ffffff;
 }
 
-.header_section .header_top .header_top_container {
+. .header_top .header_top_container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -138,7 +138,7 @@ a:focus {
           align-items: center;
 }
 
-.header_section .header_top .contact_nav {
+. .header_top .contact_nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -150,7 +150,7 @@ a:focus {
           flex: 1;
 }
 
-.header_section .header_top .contact_nav a {
+. .header_top .contact_nav a {
   color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -163,7 +163,7 @@ a:focus {
           justify-content: center;
 }
 
-.header_section .header_top .contact_nav a i {
+. .header_top .contact_nav a i {
   margin-right: 5px;
   background-color: #159ec0;
   width: 35px;
@@ -181,11 +181,11 @@ a:focus {
   border-radius: 100%;
 }
 
-.header_section .header_top .contact_nav a:hover i {
+. .header_top .contact_nav a:hover i {
   background-color: #2c7873;
 }
 
-.header_section .header_top .social_box {
+. .header_top .social_box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -195,7 +195,7 @@ a:focus {
   min-width: 200px;
 }
 
-.header_section .header_top .social_box a i {
+. .header_top .social_box a i {
   margin-right: 5px;
   background-color: #159ec0;
   width: 28px;
@@ -213,15 +213,15 @@ a:focus {
   border-radius: 100%;
 }
 
-.header_section .header_top .social_box a:hover i {
+. .header_top .social_box a:hover i {
   background-color: #2c7873;
 }
 
-.header_section .header_bottom {
+. .header_bottom {
   padding: 15px 0;
 }
 
-.header_section .header_bottom .container-fluid {
+. .header_bottom .container-fluid {
   padding-right: 25px;
   padding-left: 25px;
 }
@@ -1003,3 +1003,14 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid #000;
+  padding: 10px;
+  text-align: center;
+}
