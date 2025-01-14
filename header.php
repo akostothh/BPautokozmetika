@@ -64,13 +64,22 @@
                         <span>bejelentkezés</span>
                         </a>');
                       }
-                      else{
+                      else
+                      {
+
+                        include("./kapcsolat.php");
+                        $sql = "SELECT unick FROM user WHERE uid = " . $_SESSION["uid"];
+
+                        
+      
+                       $unick =  mysqli_fetch_assoc(mysqli_query($adb, $sql));
                         print('<a class="nav-link" href="logout.php">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        <span>kijelentkezés</span>
+                        <i class="fa fa-user" aria-hidden="true"></i> ' . $unick['unick'] . '
+                        
                         </a>');
                       }
                       ?>
+
                 </li>
               </ul>
             </div>
