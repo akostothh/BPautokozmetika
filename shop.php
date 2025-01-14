@@ -40,7 +40,7 @@
            echo "<div class='product-grid'>";
            echo "
            <div class='product'>
-               <img src='https://via.placeholder.com/150' alt='$nev'>
+               <img src=kepek/apolo1.png alt='$nev'>
                <h3>$nev</h3>
                <p>Ár: $datas[ar] Ft</p>
                <button>Kosárba</button>

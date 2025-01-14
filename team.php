@@ -39,19 +39,20 @@
   <section class="team_section layout_padding">
     <div class="container">
       <div class="heading_container heading_center">
-        <h2>
+        <h2 class="text-light">
           A mi csapatunk
         </h2>
         <p>
           Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a euismod suspendisse vel, sed quam nulla mauris
-          iaculis. Erat eget vitae malesuada, tortor tincidunt porta lorem lectus.
+          iaculis. Erat eget vitae malesuada, tortor tincidunt porta lorem lectus.Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a euismod suspendisse vel, sed quam nulla mauris
+          iaculis. Erat eget vitae malesuada, tortor tincidunt porta lorem lectus
         </p>
       </div>
       <div class="row">
         <div class="col-md-4 col-sm-6 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/t1.jpg" alt="">
+              <img src="kepek/munkas1.webp" alt="">
             </div>
             <div class="detail-box">
               <h5>
@@ -66,7 +67,7 @@
         <div class="col-md-4 col-sm-6 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/t2.jpg" alt="">
+              <img src="kepek/munkas2.webp" alt="">
             </div>
             <div class="detail-box">
               <h5>
@@ -81,7 +82,7 @@
         <div class="col-md-4 col-sm-6 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/t3.jpg" alt="">
+              <img src="kepek/munkas2.webp" alt="">
             </div>
             <div class="detail-box">
               <h5>

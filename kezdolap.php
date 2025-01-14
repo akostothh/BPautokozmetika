@@ -18,6 +18,10 @@
               <div class="row">
                 <div class="col-lg-10 col-md-11 mx-auto">
                   <div class="detail-box">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
                     <h1>
                       Ne csak maga ragyogjon<br>
                       Hanem <br>
@@ -41,6 +45,10 @@
               <div class="row">
                 <div class="col-lg-10 col-md-11 mx-auto">
                   <div class="detail-box">
+                  <br>
+                  <br>
+                  <br>
+                  <br>
                     <h1>
                     Ne csak maga ragyogjon<br>
                       Hanem <br>
@@ -59,6 +67,10 @@
               </div>
             </div>
           </div>
+          <br>
+                    <br>
+                    <br>
+                    <br>
           <div class="carousel-item">
             <div class="container ">
               <div class="row">
@@ -83,6 +95,7 @@
             </div>
           </div>
         </div>
+        
         <div class="carousel_btn-box">
           <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
             <i class="fa fa-arrow-left" aria-hidden="true"></i>
@@ -107,7 +120,7 @@
         <h2 class="">
           Szolgáltatások
         </h2>
-        <p class="col-lg-8 px-0">
+        <p class="col-lg-8 px-0 text-dark">
         Teljes körű autókozmetikai szolgáltatásaink között megtalálható a külső mosás, viaszolás és polírozás, a belső kárpittisztítás és bőrápolás, valamint a kerámia- és nanotechnológiás bevonatok felvitele. Emellett motortér tisztítást, ózonos fertőtlenítést, és autók előkészítését is vállaljuk eladásra vagy különleges eseményekre.
         </p>
       </div>
@@ -325,7 +338,7 @@
       <div class="row">
         <div class="col-md-6 px-0">
           <div class="img-box ">
-            <img src="images/contact-img.jpg" class="box_img" alt="about img">
+            <img src="kepek/kocsi2.webp" class="box_img" alt="about img">
           </div>
         </div>
         <div class="col-md-5 mx-auto">

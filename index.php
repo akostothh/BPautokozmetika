@@ -42,6 +42,7 @@
   <link href="css/responsive.css" rel="stylesheet" />
 </head>
 
+
 <body>
   <div class="hero_area">
     <div class="hero_bg_box">
@@ -54,32 +55,37 @@
     <main>
       <?php 
        include("./header.php");
-      if (isset($_GET["o"]))
+       
+       
+        if (isset($_GET["o"]))
       {     switch($_GET["o"]){
         case 'kezdolap':
           include("./kezdolap.php");
+          
           break;
-            case 'shop':
-            include("./shop.php");
-            break;
-            case 'about':
-              include("./about.php");
-              break;
-              case 'service':
-                include("./service.php");
-                break;
-                case 'team':
-                  include("./team.php");
-                  break;
+        case 'shop':
+          include("./shop.php");
+          break;
+        case 'about':
+          include("./about.php");
+          break;
+        case 'service':
+          include("./service.php");
+          break;
+        case 'team':
+          include("./team.php");
+          break;
                  
         }
        
       }
       else{
-        include("./404_belso.php");
+        include("./kezdolap.php");
       }
+
       
       include("./footer.php");
+      
       
 
 

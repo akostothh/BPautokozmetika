@@ -45,11 +45,11 @@
         <div class="col-md-5 offset-md-1">
           <div class="detail-box pr-md-2">
             <div class="heading_container">
-              <h2 class="">
+              <h2 class="text-light">
                 Rólunk
               </h2>
             </div>
-            <p class="detail_p_mt">
+            <p class="detail_p_mt text-light">
             Üdvözöljük autókozmetikánk világában, ahol az autók iránti szenvedély és a minőségi szolgáltatások találkoznak! Cégünk azzal a céllal jött létre, hogy a járműtulajdonosok számára professzionális és megbízható megoldásokat nyújtsunk az autók tisztításában, ápolásában és hosszú távú védelmében.<br><br>
 
 Hisszük, hogy minden autó megérdemli a legjobb gondoskodást, legyen szó napi használatról, különleges eseményekről vagy akár eladás előtti felkészítésről. Szolgáltatásaink között megtalálható minden, ami ahhoz szükséges, hogy autója újszerű állapotban ragyogjon: a külső mosástól és polírozástól kezdve a kárpittisztításon és bőrápoláson át egészen a kerámia- és nanotechnológiás bevonatok felviteléig.<br><br>
