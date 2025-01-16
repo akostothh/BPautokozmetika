@@ -73,7 +73,7 @@
                         
       
                        $unick =  mysqli_fetch_assoc(mysqli_query($adb, $sql));
-                        print('<a class="nav-link" href="logout.php">
+                        print('<a class="nav-link" href="./?o=modositas">
                         <i class="fa fa-user" aria-hidden="true"></i> ' . $unick['unick'] . '
                         
                         </a>');

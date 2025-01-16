@@ -14,7 +14,7 @@
 ?>
 
 <div class="valtozok">
-            <form action='adatlap_ir.php' method="post" target="kisablak" class="reglog" enctype="multipart/form-data"><br>
+            <form action='adatlap_ir.php' method="post" class="reglog" enctype="multipart/form-data"><br>
 
 					<label for="chk" aria-hidden="true">Adatok változtatása</label><br>
                     <br>
@@ -29,6 +29,14 @@
 					<button>Mentés</button>
 				</form>
 			</div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br><br>
 </body>
 </html>
 

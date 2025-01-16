@@ -75,6 +75,9 @@
         case 'team':
           include("./team.php");
           break;
+        case 'modositas':
+          include("./adatlapom.php");
+          break;
                  
         }
        

@@ -1,15 +1,19 @@
 <?php
 
-    session_start() ;
+    session_start();
     print_r( $_POST ) ;
+    var_dump( $_POST);
     print "<hr>" ;
     print_r( $_FILES ) ;
+
+
+    var_dump( $_FILES);
+
 
 
 
 
     include( "kapcsolat.php" ) ;
-
     function randomstring($h)
     {
         $c = "0123456789abcdefghijklmnopqrstuvwxyz" ;
@@ -20,11 +24,29 @@
     
     $kepnev = $_SESSION['uid'] . "_" . date("ymdHis") . "_" . randomstring(10) ;
 
-    $kepadat = $_FILES['uprofkep'] ;
+    $kepadat = $_FILES['uprofkep'];
+    var_dump( $kepadat );
+    var_dump( $kepnev );
+    print_r($kepadat['type']);
 
-    if( $kepadat['type']=="image/jpeg" ) $kiterj = ".jpg" ; else
-    if( $kepadat['type']=="image/png" ) $kiterj = ".png" ; else
-        die("<script> alert ('A kép csak JPG vagy PNG lehet!') </script>") ;
+    if( $kepadat['type']=="image/jpeg" ) {
+        $kiterj = ".jpg" ; 
+        echo '    <img src="$_POST[uprofkep]" alt="Profilkép">';
+
+    }
+    
+
+    else
+
+    if( $kepadat['type']=="image/png" )
+    {$kiterj = ".png" ; 
+        echo '    <img src="$_POST[uprofkep]" alt="Profilkép">';
+
+    }
+
+    else
+       // die("<script> alert ('A kép csak JPG vagy PNG lehet!') </script>") ;
+
 
         $kepnev .= $kiterj ;
 
@@ -36,7 +58,7 @@
 
 
 
-            if( $_POST['txt']=="") die("<script> alert('Nick név?') </script> ") ;
+          //  if( $_POST['txt']=="") die("<script> alert('Nick név?') </script> ") ;
 
     mysqli_query( $adb , "
     
@@ -49,14 +71,16 @@
                 WHERE uid = '$_POST[uid]'
 
     " );
+
+    
         $_SESSION['txt'] = $_POST['txt'];
 
-        print "
-                <script>
-                        alert('Adataidat módosítottuk.')
-                        parent.location.href = parent.location.href
-                </script>
+       // print "
+             //   <script>
+                  //      alert('Adataidat módosítottuk.')
+                //        parent.location.href = parent.location.href
+             //   </script>
 
-        ";
+       // ";
     mysqli_close( $adb );
 ?>
