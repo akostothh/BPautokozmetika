@@ -1,11 +1,11 @@
 <?php
+session_start();
 
-    session_start() ;
+// Minden session adat törlése
+session_unset();
+session_destroy();
 
-    session_unset();
-
-    session_destroy() ;
-    
-    print "<script> parent.location.href ='./' </script>";
-
-    ?>
+// Visszairányítás a kezdőlapra vagy belépési oldalra
+header("Location: index.php");
+exit;
+?>
