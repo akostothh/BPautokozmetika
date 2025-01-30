@@ -175,7 +175,7 @@
             text-align: center;
         }
 
-        .modal-content .close {
+        .modal-content .modal-close {
             color: #aaa;
             font-size: 28px;
             font-weight: bold;
@@ -211,7 +211,7 @@
         <!-- Felugró ablak a termékekhez -->
         <div id="productModal" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
+                <span class="modal-close">&times;</span>
                 <h2 id="productTitle"></h2>
                 <img id="productImage" src="" alt="" style="max-width: 200px; margin-bottom: 20px;">
                 <p id="productDescription"></p>
@@ -244,7 +244,7 @@
                                 <img src='kepek/$kep' alt='$nev'>
                                 <h3>$nev</h3>
                                 <p>Ár: $ar Ft</p>
-                                <button data-name='$nev' data-description='$leiras' data-price='$ar' data-image='$kep'>Kosárba</button>
+                                <button class='valami' data-name='$nev' data-description='$leiras' data-price='$ar' data-image='$kep'>Kosárba</button>
                             </div>
                             ";
                         }
@@ -266,6 +266,13 @@
         const cartItems = document.getElementById("cart-items");
         const cartTotal = document.getElementById("cart-total");
         const closeBtn = document.querySelector(".cart-modal-content .close");
+        const cartButton = document.querySelector(".cart");
+        const modalClose = document.querySelector(".modal-close");
+        const productModal = document.getElementById("productModal");
+
+        modalClose.onclick = () => {
+            productModal.style.display = 'none';
+        }
 
         // Kosárba rakás
         const buttons = document.querySelectorAll(".product button");
@@ -298,7 +305,7 @@
         }
 
         // Kosár modal megjelenítése
-        cartCount.onclick = () => {
+        cartButton.onclick = () => {
             cartModal.style.display = "block";
         };
 
@@ -324,6 +331,9 @@
             updateCart();
             document.getElementById('productModal').style.display = 'none'; // Bezárja a felugró ablakot
         }
+        
+        
+
     </script>
 </body>
 </html>
