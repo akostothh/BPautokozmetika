@@ -13,14 +13,14 @@
         <i class="login__icon fas fa-lock"></i>
         <input type="password" class="login__input" placeholder="Jelszó" name="pw">
     </div>
-    <button class="button login__submit">
-        <span class="button__text">Belépés</span>
+    <button class="button login__submit" id="sigbtn" >
+        <span class="button__text" >Belépés</span>
         <i class="button__icon fas fa-chevron-right"></i>
     </button>				
 </form>
 
 			<div class="social-login">
-			<input class="reg" type='button' value='Regisztráció' onclick=' location.href="reg_form.php" '>
+			<button class="button login__submit" id="regbtn" type='button' onclick=' location.href="reg_form.php" '><span class="button__text">Regisztráció</span><i class="button__icon fas fa-chevron-right"></i></button>
 				<div class="social-icons">
 
 				</div>
@@ -48,8 +48,17 @@
 
 body {
 	background-image: url("./images/fokep2.jpg");
-	background-size: cover;
 	position: relative;
+}
+
+.bg-img{
+	background-image: url("./images/fokep2.jpg");
+	position: absolute;
+	filter: blur(8px);
+	z-index: -10000;
+	width: 100%;
+	height: 100%;
+
 }
 
 body::before {
@@ -70,13 +79,8 @@ body::before {
 	min-height: 100vh;
 }
 
-.screen {		
-	background: linear-gradient(90deg, grey, black);		
-	position: relative;	
-	height: 600px;
-	width: 360px;	
-	box-shadow: 0px 0px 24px black;
-}
+
+
 
 .screen__content {
 	z-index: 1;
@@ -109,37 +113,10 @@ body::before {
 	border-radius: 0 72px 0 0;
 }
 
-.screen__background__shape2 {
-	height: 220px;
-	width: 220px;
-	background: grey;	
-	top: -172px;
-	right: 0;	
-	border-radius: 32px;
-}
-
-.screen__background__shape3 {
-	height: 540px;
-	width: 190px;
-	background: linear-gradient(270deg, grey, grey);
-	top: -24px;
-	right: 0;	
-	border-radius: 32px;
-}
-
-.screen__background__shape4 {
-	height: 400px;
-	width: 200px;
-	background: grey;	
-	top: 420px;
-	right: 50px;	
-	border-radius: 60px;
-}
-
 .login {
 	width: 320px;
 	padding: 30px;
-	padding-top: 156px;
+	padding-top: 30px;
 }
 
 .login__field {
@@ -147,11 +124,7 @@ body::before {
 	position: relative;	
 }
 
-.login__icon {
-	position: absolute;
-	top: 30px;
-	color: #7875B5;
-}
+
 
 .login__input {
 	border: none;
@@ -162,6 +135,7 @@ body::before {
 	font-weight: 700;
 	width: 75%;
 	transition: .2s;
+	color: white;
 	
 
 }
@@ -238,7 +212,7 @@ body::before {
 .login {
 	width: 320px;
 	padding: 30px;
-	padding-top: 156px;
+	padding-top: 10px;
 }
 
 .login__field {
@@ -252,15 +226,16 @@ body::before {
 	color: #7875B5;
 }
 
-.reg__input {
-	border: none;
-	border-bottom: 2px solid #D1D1D4;
-	background: none;
-	padding: 10px;
-	padding-left: 24px;
-	font-weight: 700;
-	width: 75%;
-	transition: .2s;
+
+#regbtn{
+	position: relative;
+	right: 170px;
+    width: 164%;
+	bottom: 90px;
+
+}
+#sigbtn{
+	
 }
 
 .reg__input:active,
@@ -268,24 +243,11 @@ body::before {
 .reg__input:hover {
 	outline: none;
 	border-bottom-color: #6A679E;
+
 }
 
 .reg__submit {
-	background: #fff;
-	font-size: 14px;
-	margin-top: 30px;
-	padding: 16px 20px;
-	border-radius: 26px;
-	border: 1px solid #D4D3E8;
-	text-transform: uppercase;
-	font-weight: 700;
-	display: flex;
-	align-items: center;
-	width: 100%;
-	color: #4C489D;
-	box-shadow: 0px 2px 2px #5C5696;
-	cursor: pointer;
-	transition: .2s;
+	
 }
 
 .reg__submit:active,
@@ -293,6 +255,7 @@ body::before {
 .reg__submit:hover {
 	border-color: #6A679E;
 	outline: none;
+	
 }
 
 </style>
