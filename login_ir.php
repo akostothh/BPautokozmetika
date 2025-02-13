@@ -36,7 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['unick'] = $user['unick'];
         echo "<script>parent.location.href = './'</script>";
     }
+    
 
+    
     // Kapcsolat lezárása
     mysqli_close($adb);
 

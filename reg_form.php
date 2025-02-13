@@ -47,10 +47,7 @@
 			</div>
 		</div>
 		<div class="screen__background">
-			<span class="screen__background__shape screen__background__shape4"></span>
-			<span class="screen__background__shape screen__background__shape3"></span>		
-			<span class="screen__background__shape screen__background__shape2"></span>
-			<span class="screen__background__shape screen__background__shape1"></span>
+
 		</div>		
 	</div>
 </div>
@@ -169,7 +166,7 @@ body::before {
 .login__input:focus,
 .login__input:hover {
 	outline: none;
-	border-bottom-color: black;
+	border-bottom-color: gray;
 }
 
 .login__submit {
@@ -249,13 +246,17 @@ body::before {
 
 #regbtn{
 	position: relative;
-	right: 170px;
+	right: 163px;
     width: 164%;
-	bottom: 90px;
+	align-items: center;
+	
 
 }
 #sigbtn{
-	
+	position: relative;
+	right: 30px;
+	margin-bottom: 100px;
+	align-items: center;
 }
 
 .reg__input:active,

@@ -1,13 +1,14 @@
 
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
+<div class="bg-img"></div>
 <div class="container">
 	<div class="screen">
 		<div class="screen__content">
-		<form class="login" action='login_ir.php' method='post' target='kisablak'>
+		<form class="login" action='login_ir.php' method='post'>
     <div class="login__field">
         <i class="login__icon fas fa-user"></i>
-        <input type="text" class="login__input" placeholder="e-mail cím" name="email">
+        <input type="text" class="login__input" placeholder="e-mail cím" name="email" >
     </div>
     <div class="login__field">
         <i class="login__icon fas fa-lock"></i>
@@ -27,10 +28,7 @@
 			</div>
 		</div>
 		<div class="screen__background">
-			<span class="screen__background__shape screen__background__shape4"></span>
-			<span class="screen__background__shape screen__background__shape3"></span>		
-			<span class="screen__background__shape screen__background__shape2"></span>
-			<span class="screen__background__shape screen__background__shape1"></span>
+	
 		</div>		
 	</div>
 </div>
@@ -86,6 +84,7 @@ body::before {
 	z-index: 1;
 	position: relative;	
 	height: 100%;
+	
 }
 
 .screen__background {		
@@ -99,19 +98,6 @@ body::before {
 	clip-path: inset(0 0 0 0);	
 }
 
-.screen__background__shape {
-	transform: rotate(45deg);
-	position: absolute;
-}
-
-.screen__background__shape1 {
-	height: 520px;
-	width: 520px;
-	background: #blue;	
-	top: -50px;
-	right: 120px;	
-	border-radius: 0 72px 0 0;
-}
 
 .login {
 	width: 320px;
@@ -122,6 +108,7 @@ body::before {
 .login__field {
 	padding: 20px 0px;	
 	position: relative;	
+	left: 33%;
 }
 
 
@@ -137,7 +124,6 @@ body::before {
 	transition: .2s;
 	color: white;
 	
-
 }
 
 .login__input::placeholder{
@@ -149,7 +135,8 @@ body::before {
 .login__input:focus,
 .login__input:hover {
 	outline: none;
-	border-bottom-color: black;
+	border-bottom-color: gray;
+	
 }
 
 .login__submit {
@@ -174,6 +161,7 @@ body::before {
 .login__submit:hover {
 	border-color: black;
 	outline: none;
+	
 }
 
 .button__icon {
@@ -229,13 +217,16 @@ body::before {
 
 #regbtn{
 	position: relative;
-	right: 170px;
+	right: 30%;
     width: 164%;
-	bottom: 90px;
+	align-items: center;
 
 }
 #sigbtn{
-	
+	position: relative;
+	left: 31%;
+	margin-bottom: 100px;
+	align-items: center;
 }
 
 .reg__input:active,
@@ -258,4 +249,22 @@ body::before {
 	
 }
 
+.screen{
+	text-align:center;
+	margin-right: 240px;
+	
+}
+.bg-img{
+	background-image: url("./images/fokep2.jpg");
+	position: absolute;
+	filter: blur(8px);
+	z-index: -10000;
+	width: 100%;
+	height: 100%;
+
+}
+
+
 </style>
+
+

@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include("kapcsolat.php");
 
 // Felhasználó adatainak betöltése
