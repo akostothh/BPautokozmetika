@@ -67,7 +67,7 @@
         <div class="col-md-4 col-sm-6 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="kepek/munkas2.webp" alt="">
+              <img src="kepek/munkas5.webp" alt="">
             </div>
             <div class="detail-box">
               <h5>

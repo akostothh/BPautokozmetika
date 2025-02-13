@@ -29,7 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userek = mysqli_query($adb, $user_query);
 
     if (mysqli_num_rows($userek) == 0) {
-        echo "<script>alert('Hibás belépési adatok!')</script>";
+        echo "<script>alert('Hibás belépési adatok!')
+        parent.location.href= './'
+        </script>";
     } else {
         $user = mysqli_fetch_assoc($userek);
         $_SESSION['uid'] = $user['uid'];

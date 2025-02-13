@@ -8,11 +8,15 @@
 		<form class="login" action='login_ir.php' method='post'>
     <div class="login__field">
         <i class="login__icon fas fa-user"></i>
-        <input type="text" class="login__input" placeholder="e-mail cím" name="email" >
+		
+
+        <input type="text" class="login__input" id="email" placeholder="e-mail cím" name="email" required onchange="validate_mail()">
+		<p id="email_error"></p>
     </div>
     <div class="login__field">
         <i class="login__icon fas fa-lock"></i>
-        <input type="password" class="login__input" placeholder="Jelszó" name="pw">
+        <input type="password" class="login__input" id="pw" placeholder="Jelszó" name="pw" required onchange="validate_passw()">
+		<p id="pw_error"></p>
     </div>
     <button class="button login__submit" id="sigbtn" >
         <span class="button__text" >Belépés</span>
@@ -263,8 +267,55 @@ body::before {
 	height: 100%;
 
 }
+#email_error{
+	color:white;
+	font-family: "Monaco", serif;
+	position: relative;
+	margin-top: 20px;
+}
+#pw_error{
+	color:white;
+	font-family: "Monaco", serif;
+	position: relative;
+	margin-top: 20px;
+}
+
 
 
 </style>
 
+<script>
+const mail = document.getElementById("email");
+const passw = document.getElementById("pw");
+const mail_error = document.getElementById("email_error");
+const passw_error = document.getElementById("pw_error");
+
+function validate_mail(event) {
+    const emailValue = event.target.value;
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/; // E-mail formátum ellenőrzése
+
+    if (emailValue === "") {
+        mail_error.textContent = "Az e-mail cím nem lehet üres.";
+    } else if (!emailRegex.test(emailValue)) {
+        mail_error.textContent = "Hibás e-mail cím formátum.";
+    } else {
+        mail_error.textContent = ""; // Ha helyes
+    }
+}
+
+function validate_pw(event) {
+    const pwValue = event.target.value;
+    const pwRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{6,}$/; // Minimum 6 karakter, szám és speciális karakter szükséges
+
+    if (pwValue === "") {
+        passw_error.textContent = "A jelszó nem lehet üres.";
+        } else {
+        passw_error.textContent = ""; // Ha helyes
+    }
+}
+
+mail.addEventListener("input", validate_mail); // E-mail valós idejű ellenőrzése
+passw.addEventListener("input", validate_pw); // Jelszó valós idejű ellenőrzése
+
+</script>
 

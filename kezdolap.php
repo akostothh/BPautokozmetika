@@ -258,7 +258,7 @@
         </div>
         <div class="col-md-6 px-0">
           <div class="img-box ">
-            <img src="kepek/kocsi.webp" class="box_img" alt="about img">
+            <img src="kepek/mosas.webp" class="box_img" alt="about img">
           </div>
         </div>
       </div>

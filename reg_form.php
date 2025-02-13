@@ -16,25 +16,29 @@
 <div class="container">
 	<div class="screen">
 		<div class="screen__content">
-		<form class="login" action='login_ir.php' method='post' target='kisablak'>
+		<form class="login" action='login_ir.php' method='post'>
     <div class="login__field">
         <i class="login__icon fas fa-user"></i>
         <input type="text" class="login__input" placeholder="felhasználónév" name="username">
+		<p id="user_error"></p>
     </div>
 	<div class="login__field">
         <i class="login__icon fas fa-lock"></i>
         <input type="password" class="login__input" placeholder="e-mail cím" name="email">
+		<p id=" email_error" ></p>
     </div>
     <div class="login__field">
         <i class="login__icon fas fa-lock"></i>
         <input type="password" class="login__input" placeholder="Jelszó" name="pw">
+		<p id="pw_error"></p>
     </div>
 	<div class="login__field">
         <i class="login__icon fas fa-lock"></i>
-        <input type="password" class="login__input" placeholder="Jelszó megerősítés" name="pw">
+        <input type="password" class="login__input" placeholder="Jelszó megerősítés" name="spw">
+		<p id="erosites_error"></p>
     </div>
     <button class="button login__submit" id="sigbtn" >
-        <span class="button__text" >Belépés</span>
+        <span class="button__text"  >Van már fiókja?</span>
         <i class="button__icon fas fa-chevron-right"></i>
     </button>				
 </form>
@@ -283,3 +287,30 @@ body::before {
 
 </body>
 </html>
+<script>
+const user = document.getElementById("username");
+const mail = document.getElementById("email");
+const passw = document.getElementById("pw");
+const spass = document.getElementById("spw");
+const user = document.getElementById("user_error");
+const mail_error = document.getElementById("email_error");
+const pw_error = document.getElementById("passw_error");
+const passw_error = document.getElementById("erosites_error");
+
+
+
+function validate_pw(event) {
+    const pwValue = event.target.value;
+    const pwRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{6,}$/; // Minimum 6 karakter, szám és speciális karakter szükséges
+
+    if (pwValue === "") {
+        passw_error.textContent = "A jelszó nem lehet üres.";
+        } else {
+        passw_error.textContent = ""; // Ha helyes
+    }
+}
+
+mail.addEventListener("input", validate_mail); // E-mail valós idejű ellenőrzése
+passw.addEventListener("input", validate_pw); // Jelszó valós idejű ellenőrzése
+
+</script>
