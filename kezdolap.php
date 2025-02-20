@@ -330,29 +330,41 @@
   </section>
 
   <!-- end team section -->
-
-  <section class="rating_section">
-  <div class="container">
-    <div class="heading_container heading_center">
-      <h2>Értékelje szolgáltatásainkat!</h2>
+<?php
+  if(isset($_SESSION['uid'])){
+    print("
+      <section class='rating_section'>
+  <div class='container'>
+    <div class'heading_container heading_center'>
+      <h2 class='ert' >Értékelje szolgáltatásainkat!</h2>
     </div>
-    <div class="rating">
-      <label for="star1" class="star">&#9733;</label>
-      <label for="star2" class="star">&#9733;</label>
-      <label for="star3" class="star">&#9733;</label>
-      <label for="star4" class="star">&#9733;</label>
-      <label for="star5" class="star">&#9733;</label>
-    </div>
-    <p>Az Ön értékelése: <span id="selected-rating">0</span> csillag</p>
+    
 
     <!-- Vélemény író felület -->
-    <div class="review_section">
-      <textarea id="review-text" placeholder="Írja meg véleményét..."></textarea>
+<form method='POST' action='velemeny.php' >
+<div class='rating'>
+      <label for='star1' class='star'>&#9733;</label>
+      <label for='star2' class='star'>&#9733;</label>
+      <label for='star3' class='star'>&#9733;</label>
+      <label for='star4' class='star'>&#9733;</label>
+      <label for='star5' class='star'>&#9733;</label>
     </div>
-
-    <button onclick="submitRating()">Küldés</button>
-  </div>
+  <input type='hidden' id='csillag' name='csillagok' placeholder='csillag'/>
+    <div class='review_section'>
+      <textarea id='review-text' name='rate' placeholder='Írja meg véleményét...'></textarea>
+    </div> 
+    <button type='submit' onclick='submitRating()'>Küldés</button>
+</form>
+</div>
 </section>
+");
+  }
+
+
+
+  
+  
+?>
 
   <!-- contact section -->
   <section class="contact_section ">
@@ -527,6 +539,9 @@ textarea:focus {
   border-color: #4CAF50;
   outline: none;
 }
+.ert{
+  color:black;
+}
 
 
 </style>
@@ -540,7 +555,7 @@ const stars = document.querySelectorAll('.star');
 stars.forEach((star, index) => {
   star.addEventListener('click', () => {
     selectedRating = index + 1;
-    document.getElementById('selected-rating').innerText = selectedRating;
+    document.getElementById('csillag').value = selectedRating;
     updateStars();
   });
 });
@@ -568,5 +583,7 @@ function submitRating() {
     alert("Kérem válasszon csillagokat és írjon véleményt az értékeléshez!");
   }
 }
+
+
 
   </script>
