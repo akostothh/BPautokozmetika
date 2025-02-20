@@ -40,55 +40,50 @@
   <!-- service section -->
 
   <section class="service_section layout_padding">
-  <table>
+  <table class="tablazat">
+    <tr class="tipusok">
+            <td>Szolgáltatás</td>
+            <td>Leírás</td>
+            <td>Árak</td>
+            <td>Időtartam</td>
+    </tr>
         <tr>
-            <td>1,1</td>
-            <td>1,2</td>
-            <td>1,3</td>
-            <td>1,4</td>
-            <td>1,5</td>
+            <td>Professzionális külső autómosás és waxolás</td>
+            <td>Kíméletes, prémium tisztítószerekkel eltávolítjuk a szennyeződéseket, majd védő waxréteggel fokozzuk az autó fényét és ellenállóságát.</td>
+            <td>8 000 - 15 000 Ft</td>
+            <td>45-90 perc</td>
+            
         </tr>
         <tr>
-            <td>2,1</td>
-            <td>2,2</td>
-            <td>2,3</td>
-            <td>2,4</td>
-            <td>2,5</td>
+            <td>Belső tér mélytisztítás és kárpittisztítás</td>
+            <td>Speciális tisztítószerekkel és gőzölős technológiával eltávolítjuk a foltokat, szennyeződéseket és baktériumokat, miközben felfrissítjük a belső teret.</td>
+            <td>15 000 - 30 000 Ft</td>
+            <td>2-4 óra</td>
         </tr>
         <tr>
-            <td>3,1</td>
-            <td>3,2</td>
-            <td>3,3</td>
-            <td>3,4</td>
-            <td>3,5</td>
+            <td>Kerámia bevonat felvitele</td>
+            <td>A nanotechnológiás bevonat hosszú távú védelmet nyújt a karosszériának, fokozza a fényt és ellenállóbbá teszi a szennyeződésekkel és karcolásokkal szemben.</td>
+            <td>80 000 - 200 000 Ft</td>
+            <td>6-12 óra (száradással együtt akár 24 óra)</td>
         </tr>
         <tr>
-            <td>4,1</td>
-            <td>4,2</td>
-            <td>4,3</td>
-            <td>4,4</td>
-            <td>4,5</td>
+            <td>Fényszóró polírozás és UV-védelem</td>
+            <td>A bemattult fényszórókat visszacsiszoljuk, polírozzuk és UV-védő bevonattal látjuk el, hogy javítsuk a fényerőt és az autó megjelenését.</td>
+            <td>10 000 - 20 000 Ft</td>
+            <td>60-90 perc</td>
         </tr>
         <tr>
-            <td>5,1</td>
-            <td>5,2</td>
-            <td>5,3</td>
-            <td>5,4</td>
-            <td>5,5</td>
+            <td>Motortér tisztítás és ápolás</td>
+            <td>Kíméletes tisztító- és ápolószerekkel eltávolítjuk az olaj- és porlerakódásokat, így a motor tiszta, rendezett és hosszabb élettartamú lesz.</td>
+            <td>10 000 - 18 000 Ft</td>
+            <td>45-90 perc</td>
         </tr>
+        
         <tr>
-            <td>6,1</td>
-            <td>6,2</td>
-            <td>6,3</td>
-            <td>6,4</td>
-            <td>6,5</td>
-        </tr>
-        <tr>
-            <td>7,1</td>
-            <td>7,2</td>
-            <td>7,3</td>
-            <td>7,4</td>
-            <td>7,5</td>
+            <td>Bőrápolás és bőrtisztítás</td>
+            <td>Speciális tisztítószerekkel eltávolítjuk a szennyeződéseket, majd tápláló bőrápolóval kezeljük az üléseket, hogy megőrizzék rugalmasságukat és hosszú élettartamukat.</td>
+            <td>12 000 - 25 000 Ft</td>
+            <td>1,5 - 3 óra</td>
         </tr>
     </table>
       
@@ -126,3 +121,18 @@
 </body>
 
 </html>
+
+
+
+<style>
+
+  .tipusok{
+      font-weight: bold;
+      font-size: 20px;
+  }
+  .tablazat{
+    margin-left: auto;
+    margin-right: auto;
+    width:92%;
+  }
+  </style>
