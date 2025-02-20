@@ -1,4 +1,9 @@
 
+
+<!--Logo-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
 <div class="bg-img"></div>
@@ -7,32 +12,31 @@
 		<div class="screen__content">
 		<form class="login" action='login_ir.php' method='post'>
     <div class="login__field">
-        <i class="login__icon fas fa-user"></i>
+    
 		
 
         <input type="text" class="login__input" id="email" placeholder="e-mail cím" name="email" required onchange="validate_mail()">
 		<p id="email_error"></p>
     </div>
     <div class="login__field">
-        <i class="login__icon fas fa-lock"></i>
         <input type="password" class="login__input" id="pw" placeholder="Jelszó" name="pw" required onchange="validate_passw()">
 		<p id="pw_error"></p>
     </div>
     <button class="button login__submit" id="sigbtn" >
         <span class="button__text" >Belépés</span>
-        <i class="button__icon fas fa-chevron-right"></i>
     </button>				
 </form>
 
 			<div class="social-login">
-			<button class="button login__submit" id="regbtn" type='button' onclick=' location.href="reg_form.php" '><span class="button__text">Regisztráció</span><i class="button__icon fas fa-chevron-right"></i></button>
+			<button class="button login__submit" id="regbtn" type='button' onclick=' location.href="reg_form.php" '><span class="button__text">Regisztráció</span></i></button>
 				<div class="social-icons">
 
 				</div>
 			</div>
 		</div>
 		<div class="screen__background">
-	
+		<button class="back" type='button' onclick=' location.href="./" '><i class="fa fa-home"></i></button>
+
 		</div>		
 	</div>
 </div>
@@ -280,7 +284,18 @@ body::before {
 	margin-top: 20px;
 }
 
+.back{
+	position: absolute;
+	bottom: 550px;
+	right: 1230px;
+	font-size: 35px;
+	width:50px;
+	color: black;
+	
+	
 
+
+}
 
 </style>
 

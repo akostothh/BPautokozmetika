@@ -1,23 +1,46 @@
 <?php
-	print_r($_POST);
-	
-	if( $_POST['txt']=="" )
-		die("<script> alert('Nem adott meg felhasználónevet!')</script>");
+session_start();
 
-	include( "kapcsolat.php") ;
+// Hibák tárolására szolgáló változó
+$errors = [];
 
-	//var_dump( $adb ) ;
+// Ellenőrzés, hogy a POST kérés megtörtént-e (azaz az űrlap elküldésre került)
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Ellenőrzés, hogy minden mező ki van-e töltve
+    if ($_POST['username'] == "") $errors[] = "Felhasználónév";
+    if ($_POST['email'] == "") $errors[] = "Email cím";
+    if ($_POST['pw'] == "") $errors[] = "Jelszó";
+    if ($_POST['spw'] == "") $errors[] = "Jelszó megerősítés";
 
-	$upd = md5($_POST['pswd'] ) ;
+    // Ha van hiba, akkor egy összefoglaló üzenetet jelenítünk meg
+    if (count($errors) > 0) {
+        $_SESSION['errors'] = $errors; // Hibák mentése session-be
+        header("Location: reg_form.php"); // Átirányítás ugyanarra az oldalra
+        exit();
+    }
 
-	mysqli_query( $adb , "
-		
-INSERT INTO user ( uid,           uemail,           unick,   upd, uszuldatum,  udatum,  uip, session, ustatusz, ukomment)
-VALUES 		 (NULL, '$_POST[email]', '$_POST[txt]',   '$upd',         '', 'NOW()', ''  , ''     , '', '');
+    // Ha minden rendben van, folytatjuk a regisztrációval
+    include("kapcsolat.php");
 
-	" );
+    // Jelszó hash-elés
+    $upd = md5($_POST['pw']);
 
-	mysqli_close( $adb );
+    // SQL lekérdezés végrehajtása
+    $query = "
+    INSERT INTO user (uid, uemail, unick, upd, uszuldatum, udatum, uip, session, ustatusz, ukomment)
+    VALUES (NULL, '$_POST[email]', '$_POST[username]', '$upd', '', NOW(), '', '', '', '')
+    ";
 
-	echo"<script>location.href='index.php'</script>"
+    // Lekérdezés futtatása
+    if (mysqli_query($adb, $query)) {
+        // Sikeres regisztráció esetén átirányítás a főoldalra
+        header("Location: ./ ");
+        exit();
+    } else {
+        // Ha hiba történt, üzenet megjelenítése
+        echo "<script> alert('Hiba történt a regisztráció során!')</script>";
+    }
+
+    mysqli_close($adb);
+}
 ?>

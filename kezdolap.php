@@ -331,6 +331,29 @@
 
   <!-- end team section -->
 
+  <section class="rating_section">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>Értékelje szolgáltatásainkat!</h2>
+    </div>
+    <div class="rating">
+      <label for="star1" class="star">&#9733;</label>
+      <label for="star2" class="star">&#9733;</label>
+      <label for="star3" class="star">&#9733;</label>
+      <label for="star4" class="star">&#9733;</label>
+      <label for="star5" class="star">&#9733;</label>
+    </div>
+    <p>Az Ön értékelése: <span id="selected-rating">0</span> csillag</p>
+
+    <!-- Vélemény író felület -->
+    <div class="review_section">
+      <textarea id="review-text" placeholder="Írja meg véleményét..."></textarea>
+    </div>
+
+    <button onclick="submitRating()">Küldés</button>
+  </div>
+</section>
+
   <!-- contact section -->
   <section class="contact_section ">
     <div class="container-fluid">
@@ -388,11 +411,15 @@
   </section>
   <!-- end contact section -->
 
-  <!-- client section -->
 
 
 
-  <!-- end client section -->
+
+
+
+
+
+
 
   <!-- info section -->
   
@@ -447,5 +474,99 @@
   --_x: calc(-1*var(--g))
 }
 
+.rating_section {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.rating {
+  font-size: 40px;
+  display: inline-block;
+}
+
+.star {
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.star:hover, .star.selected {
+  color: #f5b301;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+/* Vélemény szövegterület */
+.review_section {
+  margin-top: 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+textarea:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
 
 </style>
+
+<script>
+// Vélemény és értékelés együttes kezelése
+let selectedRating = 0;
+
+// A csillagok kiválasztásának kezelése
+const stars = document.querySelectorAll('.star');
+stars.forEach((star, index) => {
+  star.addEventListener('click', () => {
+    selectedRating = index + 1;
+    document.getElementById('selected-rating').innerText = selectedRating;
+    updateStars();
+  });
+});
+
+function updateStars() {
+  stars.forEach((star, index) => {
+    if (index < selectedRating) {
+      star.classList.add('selected');
+    } else {
+      star.classList.remove('selected');
+    }
+  });
+}
+
+// Vélemény beküldésének kezelése
+function submitRating() {
+  const reviewText = document.getElementById('review-text').value.trim();
+
+  if (selectedRating > 0 && reviewText) {
+    alert(`Köszönjük az értékelését! Ön ${selectedRating} csillagot adott. Véleménye: "${reviewText}"`);
+    // Itt lehet elküldeni az értékelést és véleményt a szerverre.
+  } else if (selectedRating > 0) {
+    alert(`Köszönjük az értékelést! Ön ${selectedRating} csillagot adott, de nem írt véleményt.`);
+  } else {
+    alert("Kérem válasszon csillagokat és írjon véleményt az értékeléshez!");
+  }
+}
+
+  </script>

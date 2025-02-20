@@ -9,42 +9,47 @@
 	<div class="bg-img"></div>
 	<div class="main">  	
 
-
-			
+<!--Logo-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- -->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
 
 <div class="container">
 	<div class="screen">
 		<div class="screen__content">
-		<form class="login" action='login_ir.php' method='post'>
+		<form class="login" action='regi_ir.php' method='post'>
     <div class="login__field">
-        <i class="login__icon fas fa-user"></i>
+        
         <input type="text" class="login__input" placeholder="felhasználónév" name="username">
 		<p id="user_error"></p>
     </div>
 	<div class="login__field">
-        <i class="login__icon fas fa-lock"></i>
-        <input type="password" class="login__input" placeholder="e-mail cím" name="email">
+        
+        <input type="email" class="login__input" placeholder="e-mail cím" name="email">
 		<p id=" email_error" ></p>
     </div>
     <div class="login__field">
-        <i class="login__icon fas fa-lock"></i>
+      
         <input type="password" class="login__input" placeholder="Jelszó" name="pw">
 		<p id="pw_error"></p>
     </div>
 	<div class="login__field">
-        <i class="login__icon fas fa-lock"></i>
+    
         <input type="password" class="login__input" placeholder="Jelszó megerősítés" name="spw">
 		<p id="erosites_error"></p>
     </div>
     <button class="button login__submit" id="sigbtn" >
-        <span class="button__text"  >Van már fiókja?</span>
-        <i class="button__icon fas fa-chevron-right"></i>
+        <span class="button__text"  >Regisztráció</span>
+    
     </button>				
 </form>
 
 			<div class="social-login">
-			<button class="button login__submit" id="regbtn" type='button' onclick=' location.href="reg_form.php" '><span class="button__text">Regisztráció</span><i class="button__icon fas fa-chevron-right"></i></button>
+			<button class="button login__submit" id="regbtn" type='button' onclick=' location.href="login_form.php" '><span class="button__text">Van már fiókod?</span></button>
+				<button class="back" type='button' onclick=' location.href="./" '><i class="fa fa-home"></i></button>
+				
+
 				<div class="social-icons">
 
 				</div>
@@ -283,34 +288,22 @@ body::before {
 	
 }
 
+.back{
+	position: absolute;
+	bottom: 500px;
+	right: 700px;
+	font-size: 30px;
+	width:50px;
+
+}
+
 </style>
 
 </body>
 </html>
 <script>
-const user = document.getElementById("username");
-const mail = document.getElementById("email");
-const passw = document.getElementById("pw");
-const spass = document.getElementById("spw");
-const user = document.getElementById("user_error");
-const mail_error = document.getElementById("email_error");
-const pw_error = document.getElementById("passw_error");
-const passw_error = document.getElementById("erosites_error");
+ 
+<?php
 
 
-
-function validate_pw(event) {
-    const pwValue = event.target.value;
-    const pwRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{6,}$/; // Minimum 6 karakter, szám és speciális karakter szükséges
-
-    if (pwValue === "") {
-        passw_error.textContent = "A jelszó nem lehet üres.";
-        } else {
-        passw_error.textContent = ""; // Ha helyes
-    }
-}
-
-mail.addEventListener("input", validate_mail); // E-mail valós idejű ellenőrzése
-passw.addEventListener("input", validate_pw); // Jelszó valós idejű ellenőrzése
-
-</script>
+?>
