@@ -37,7 +37,11 @@ $profilkep = "./profilkepek/" . $user['uprofkep_nev'];
             <input type="email" name="email" placeholder="Új e-mail" value="<?= $user['uemail'] ?>"><br>
             <input type="file" name="uprofkep"><br>
             <button>Mentés</button>
+            
         </form>
+        <form action="logout.php" method="post" style="margin-top: 20px;">
+        <button type="submit">Kijelentkezés</button>
+    </form>
     </div>
 </body>
 </html>
@@ -60,8 +64,97 @@ $profilkep = "./profilkepek/" . $user['uprofkep_nev'];
 
 
     <!-- Kijelentkezés gomb -->
-    <form action="logout.php" method="post" style="margin-top: 20px;">
-        <button type="submit">Kijelentkezés</button>
-    </form>
+    
 </body>
 </html>
+<style>
+
+/* Általános stílusok */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #222;
+}
+
+/* Profil container */
+.valtozok {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 50px auto;
+    
+}
+
+/* Profilkép */
+.valtozok img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007BFF;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Input mezők */
+input[type="text"],
+input[type="email"],
+input[type="file"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Felhasználói adatok */
+.valtozok p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    background: #f0f0f0;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 5px 0;
+    text-align: left;
+}
+
+.valtozok p span {
+    font-weight: normal;
+    color: #333;
+}
+
+/* Gombok */
+button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Kijelentkezés gomb */
+form[action="logout.php"] button {
+    background: #dc3545;
+}
+
+form[action="logout.php"] button:hover {
+    background: #a71d2a;
+}
+
+    </style>

@@ -341,7 +341,9 @@
     
 
     <!-- Vélemény író felület -->
-<form method='POST' action='velemeny.php' >
+xxxx
+
+    <form method='POST' action='velemeny.php' >
 <div class='rating'>
       <label for='star1' class='star'>&#9733;</label>
       <label for='star2' class='star'>&#9733;</label>
@@ -355,6 +357,8 @@
     </div> 
     <button type='submit' onclick='submitRating()'>Küldés</button>
 </form>
+xxxx
+
 </div>
 </section>
 ");
@@ -365,6 +369,7 @@
   
   
 ?>
+
 
   <!-- contact section -->
   <section class="contact_section ">
