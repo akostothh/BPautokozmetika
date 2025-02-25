@@ -341,9 +341,9 @@
     
 
     <!-- Vélemény író felület -->
-xxxx
 
-    <form method='POST' action='velemeny.php' >
+
+    <form method='POST' action='velemeny.php' target='kisablak'>
 <div class='rating'>
       <label for='star1' class='star'>&#9733;</label>
       <label for='star2' class='star'>&#9733;</label>
@@ -357,19 +357,26 @@ xxxx
     </div> 
     <button type='submit' onclick='submitRating()'>Küldés</button>
 </form>
-xxxx
+
+
 
 </div>
 </section>
+
+
+
+
 ");
+
+echo"<iframe name='kisablak' style='width: 100%; height: 500px; border: none;'></iframe>
+";
   }
 
-
+  
 
   
   
 ?>
-
 
   <!-- contact section -->
   <section class="contact_section ">
@@ -547,8 +554,16 @@ textarea:focus {
 .ert{
   color:black;
 }
-
-
+iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+  border-radius: 10px;
+}
+iframe {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 15px
+}
 </style>
 
 <script>
