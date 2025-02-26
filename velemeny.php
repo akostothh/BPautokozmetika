@@ -54,37 +54,9 @@ if(isset($_SESSION['uid'])) {
     <body>
 
     <div class="velemeny-container">
-        <h2>Vélemények</h2>
 
-        <?php
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $user_id = $row['uid'];
-                $comment = htmlspecialchars($row['comment']);
-                $rate = $row['rate'];
-                $date = $row['date']; // Ha van dátum mező
-
-                // Felhasználónevet kiírni (pl. az 'users' táblából)
-                $user_query = "SELECT `unick` FROM `user` WHERE `uid` = '$user_id'";
-                $user_result = mysqli_query($adb, $user_query);
-                $user_row = mysqli_fetch_assoc($user_result);
-                $username = $user_row['unick'];
-
-                // Vélemény és értékelés megjelenítése
-                echo "<div class='velemeny'>";
-                echo "<strong>$username</strong> <span class='date'>($date)</span><br>";
-                echo "<p>$comment</p>";
-                echo "<p class='stars'>" . str_repeat("⭐", $rate) . "</p>";
-                echo "</div>";
-            }
-        } else {
-            echo "<p>Még nincs vélemény.</p>";
-        }
-        ?>
-    </div>
-
-    </body>
-    </html>
+  
+     
 
     <?php
 

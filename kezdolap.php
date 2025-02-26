@@ -361,15 +361,10 @@
 
 
 </div>
-</section>
+</section>");
 
+//echo"<iframe name='kisablak' style='width: 100%; height: 500px; border: none;'></iframe>
 
-
-
-");
-
-echo"<iframe name='kisablak' style='width: 100%; height: 500px; border: none;'></iframe>
-";
   }
 
   
@@ -377,6 +372,38 @@ echo"<iframe name='kisablak' style='width: 100%; height: 500px; border: none;'><
   
   
 ?>
+<?php
+include("kapcsolat.php");
+
+$query = "SELECT v.*, u.unick FROM `velemeny` v 
+          LEFT JOIN `user` u ON v.uid = u.uid 
+          ORDER BY v.vid DESC";
+$result = mysqli_query($adb, $query);
+?>
+
+<div class="velemeny-container">
+
+    <?php
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $username = $row['unick'] ?? 'Ismeretlen felhasználó';
+            $comment = htmlspecialchars($row['comment']);
+            $rate = $row['rate'];
+            $date = $row['date'];
+
+            echo "<div class='velemeny'>";
+            echo "<strong>$username</strong> <span class='date'>($date)</span><br>";
+            echo "<p>$comment</p>";
+            echo "<p class='stars'>" . str_repeat("⭐", $rate) . "</p>";
+            echo "</div>";
+        }
+    } else {
+        echo "<p>Még nincs vélemény.</p>";
+    }
+    ?>
+</div>
+
+
 
   <!-- contact section -->
   <section class="contact_section ">
@@ -452,6 +479,61 @@ echo"<iframe name='kisablak' style='width: 100%; height: 500px; border: none;'><
 </body>
 </html>
 <style>
+.velemeny {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px auto;
+    width: 80%; /* Keskenyebb, a szülő elemhez igazítva */
+    max-width: 600px; /* Maximális szélesség */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Simulás animáció */
+}
+
+.velemeny:hover {
+    transform: scale(1.02); /* Kis animáció, amikor ráhúzod az egeret */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.velemeny strong {
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.velemeny .date {
+    font-size: 12px;
+    color: #888;
+    margin-left: 10px;
+    font-style: italic;
+}
+
+.velemeny p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.velemeny .stars {
+    color: #ffcc00;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.velemeny .stars::after {
+    content: " · ";
+    color: #888;
+    font-size: 14px;
+}
+
+.velemeny .stars:last-child::after {
+    content: "";
+}
+
 .gallery {
   --g: 8px;   /* the gap */
   --s: 400px; /* the size */
