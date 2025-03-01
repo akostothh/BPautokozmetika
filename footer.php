@@ -9,7 +9,7 @@
           </div>
           <div class="col-md-5 ">
             <div class="info_contact">
-              <a href="">
+              <a href="https://maps.app.goo.gl/WKaq4M62d9mHgN9v7" target="_blank">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
                   Lokáció
@@ -24,20 +24,7 @@
             </div>
           </div>
           <div class="col-md-4 ">
-            <div class="social_box">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -49,10 +36,15 @@
                 Cég
               </h5>
               <p>
-                Randomised words which don't look even slightly believable. If you are going to use a passage of
-                Lorem
-                Ipsum, you need to be sure
-              </p>
+              Prémium autókozmetikai szolgáltatásokat kínálunk, hogy járműve mindig tiszta és ragyogó legyen.
+
+
+
+
+
+
+
+</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
@@ -74,11 +66,7 @@
                 Szolgáltatások
               </h5>
               <p>
-                Randomised words which don't look even slightly believable. If you are going to use a passage of
-                Lorem
-                Ipsum, you need to be sure
-              </p>
-            </div>
+              Professzionális autómosást, belső tér tisztítást és polírozást kínálunk, hogy autója mindig ragyogjon. Kíméletes, de hatékony kezeléssel biztosítjuk a tiszta és védett felületeket.            </div>
           </div>
           <div class="col-lg-2 col-md-6">
             <div class="">

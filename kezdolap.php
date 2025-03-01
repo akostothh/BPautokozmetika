@@ -1,3 +1,47 @@
+<?php
+ob_start(); // Output buffering bekapcsolása
+include("kapcsolat.php");
+
+if (isset($_SESSION['velemenyScroll'])) {
+    echo "<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('velemeny-container').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>";
+    unset($_SESSION['velemenyScroll']); // Hogy ne görgessen minden frissítéskor
+}
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  if (isset($_SESSION['uid'])) {
+      // Biztonságos bemenetkezelés
+      $velemeny = mysqli_real_escape_string($adb, trim($_POST["rate"]));
+      $csillagok = isset($_POST["csillagok"]) ? intval($_POST["csillagok"]) : 1;
+      $userid = intval($_SESSION['uid']);
+      $datum = date("Y-m-d H:i:s");
+
+      // SQL lekérdezés a vélemény hozzáadásához
+      $ertekeles = "INSERT INTO `velemeny` (`uid`, `comment`, `rate`, `date`) VALUES ('$userid', '$velemeny', '$csillagok', '$datum')";
+
+      if (mysqli_query($adb, $ertekeles)) {
+          $_SESSION['velemenyScroll'] = true;
+          // JSON válasz küldése
+          echo json_encode(["status" => "success", "message" => "Vélemény sikeresen elküldve!"]);
+      } else {
+          echo json_encode(["status" => "error", "message" => "Hiba a beszúrásnál: " . mysqli_error($adb)]);
+      }
+
+      // Adatbázis lezárása
+      mysqli_close($adb);
+  } else {
+      echo json_encode(["status" => "error", "message" => "Nem vagy bejelentkezve."]);
+  }
+  exit();
+}
+
+
+ob_end_flush(); // Output buffering leállítása és tartalom küldése
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,103 +55,110 @@
 
 <main id="main" class="flexbox-col">
 <section class="slider_section ">
-      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+    <div id="customCarousel1" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container ">
-              <div class="row">
-                <div class="col-lg-10 col-md-11 mx-auto">
-                  <div class="detail-box">
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <h1>
-                      Ne csak maga ragyogjon<br>
-                      Hanem <br>
-                      Az autoja is!
-                    </h1>
-                    <p>
-                      Professzionális autókozmetikai szolgáltatásainkkal autója mindig ragyogó és újszerű állapotban tündököl. Bízza ránk a tisztítást, polírozást és védelmet, hogy autója megérdemelt törődést kapjon!
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Elérhetőség
-                      </a>
+            <div class="carousel-item active">
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-lg-10 col-md-11 mx-auto">
+                            <div class="detail-box">
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <h1>
+                                    Ne csak maga ragyogjon<br>
+                                    Hanem <br>
+                                    Az autoja is!
+                                </h1>
+                                <p>
+                                    Professzionális autókozmetikai szolgáltatásainkkal autója mindig ragyogó és újszerű
+                                    állapotban tündököl. Bízza ránk a tisztítást, polírozást és védelmet, hogy autója
+                                    megérdemelt törődést kapjon!
+                                </p>
+                                <div class="btn-box">
+                                    <a href="" class="btn1">
+                                        Elérhetőség
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container ">
-              <div class="row">
-                <div class="col-lg-10 col-md-11 mx-auto">
-                  <div class="detail-box">
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                    <h1>
-                    Ne csak maga ragyogjon<br>
-                      Hanem <br>
-                      Az autoja is!
-                    </h1>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit, sed tempora praesentium commodi error, hic recusandae repudiandae neque ad molestias, atque veritatis labore quae eveniet autem in
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Elérhetőség
-                      </a>
+            <div class="carousel-item">
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-lg-10 col-md-11 mx-auto">
+                            <div class="detail-box">
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <h1>
+                                    Engedje, <br>
+                                    hogy az autója megmutassa <br>
+                                    valódi fényét!
+                                </h1>
+                                <p>
+                                    Autókozmetikai szolgáltatásunk segít abban, hogy járműve mindig újszerű állapotban
+                                    legyen. Kíméletes, de hatékony tisztítással és polírozással új életet lehelünk az
+                                    autójába. Bízza ránk, és élvezze a ragyogóan tiszta autót minden nap!
+                                </p>
+                                <div class="btn-box">
+                                    <a href="" class="btn1">
+                                        Elérhetőség
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <br>
-                    <br>
-                    <br>
-                    <br>
-          <div class="carousel-item">
-            <div class="container ">
-              <div class="row">
-                <div class="col-lg-10 col-md-11 mx-auto">
-                  <div class="detail-box">
-                    <h1>
-                    Ne csak maga ragyogjon<br>
-                      Hanem <br>
-                      Az autoja is!
-                    </h1>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit, sed tempora praesentium commodi error, hic recusandae repudiandae neque ad molestias, atque veritatis labore quae eveniet autem in
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Elérhetőség
-                      </a>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="carousel-item">
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-lg-10 col-md-11 mx-auto">
+                            <div class="detail-box">
+                                <h1>
+                                    Ne csak a motor pörögjön, <br>
+                                    Hanem <br>
+                                    az autója is tündököljön!
+                                </h1>
+                                <p>
+                                    Az autókozmetika szolgáltatásunk teljeskörűen ápolja járművét, hogy az kívül-belül
+                                    ragyogjon. Professzionális tisztítószerekkel és eszközökkel dolgozunk, biztosítva a
+                                    hosszú távú védelmet és friss megjelenést. Bízza ránk autója tisztaságát, és élvezze
+                                    a tökéletes eredményt! </p>
+                                <div class="btn-box">
+                                    <a href="" class="btn1">
+                                        Elérhetőség
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-        
+
         <div class="carousel_btn-box">
-          <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            <span class="sr-only">Elöző</span>
-          </a>
-          <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
-            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-            <span class="sr-only">Következő</span>
-          </a>
+            <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                <span class="sr-only">Elöző</span>
+            </a>
+            <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                <span class="sr-only">Következő</span>
+            </a>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
+
     <!-- end slider section -->
   </div>
 
@@ -227,7 +278,7 @@
         </div>
       </div>
       <div class="btn-box">
-        <a href="">
+        <a href="./service.php">
           Több információ
         </a>
       </div>
@@ -330,77 +381,77 @@
   </section>
 
   <!-- end team section -->
-<?php
-  if(isset($_SESSION['uid'])){
-    print("
-      <section class='rating_section'>
-  <div class='container'>
-    <div class'heading_container heading_center'>
-      <h2 class='ert' >Értékelje szolgáltatásainkat!</h2>
-    </div>
-    
+  <?php
 
-    <!-- Vélemény író felület -->
+$userid = $_SESSION['uid'] ?? null;
+if ($userid) {
+  $query = "SELECT COUNT(*) AS count FROM `velemeny` WHERE `uid` = $userid";
+  $result = mysqli_query($adb, $query);
+  $row = mysqli_fetch_assoc($result);
 
-
-    <form method='POST' action='velemeny.php' target='kisablak'>
-<div class='rating'>
-      <label for='star1' class='star'>&#9733;</label>
-      <label for='star2' class='star'>&#9733;</label>
-      <label for='star3' class='star'>&#9733;</label>
-      <label for='star4' class='star'>&#9733;</label>
-      <label for='star5' class='star'>&#9733;</label>
-    </div>
-  <input type='hidden' id='csillag' name='csillagok' placeholder='csillag'/>
-    <div class='review_section'>
-      <textarea id='review-text' name='rate' placeholder='Írja meg véleményét...'></textarea>
-    </div> 
-    <button type='submit' onclick='submitRating()'>Küldés</button>
-</form>
-
-
-
-</div>
-</section>");
-
-//echo"<iframe name='kisablak' style='width: 100%; height: 500px; border: none;'></iframe>
-
+  if ($row['count'] == 0) {
+      echo "<section class='rating_section'>
+              <div class='container'>
+                  <div class='heading_container heading_center'>
+                      <h2>Értékelje szolgáltatásainkat!</h2>
+                  </div>
+                  <form method='POST' id='velemeny-form' action='velemeny.php' target='kisablak'>
+                      <div class='rating'>
+                          <label for='star1' class='star'>&#9733;</label>
+                          <label for='star2' class='star'>&#9733;</label>
+                          <label for='star3' class='star'>&#9733;</label>
+                          <label for='star4' class='star'>&#9733;</label>
+                          <label for='star5' class='star'>&#9733;</label>
+                      </div>
+                      <input type='hidden' id='csillag' name='csillagok'/>
+                      <div class='review_section'>
+                          <textarea id='review-text' name='rate' placeholder='Írja meg véleményét...'></textarea>
+                      </div> 
+                      <button type='submit'>Küldés</button>
+                  </form>
+              </div>
+            </section>";
   }
+}
+// Vélemények lekérdezése (minden esetben)
+$query = "SELECT v.*, u.unick FROM `velemeny` v 
+          LEFT JOIN `user` u ON v.uid = u.uid 
+          ORDER BY v.date DESC";
+$result = mysqli_query($adb, $query);
 
-  
+// Vélemények megjelenítése
+echo "<h3 class='ratesz'>Vélemények</h3>";
+if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $username = $row['unick'] ?? 'Ismeretlen felhasználó';
+        $comment = htmlspecialchars($row['comment']);
+        $rate = $row['rate'];
+        $date = $row['date'];
+        
+        echo "<div class='velemeny'>";
+        echo "<strong>$username</strong> <span class='date'>($date)</span><br>";
+        echo "<p>$comment</p>";
+        echo "<p class='stars'>" . str_repeat("⭐", $rate) . "</p>";
+        echo "</div>";
+    }
+} else {
+    echo "<p>Még nincs vélemény.</p>";
+}
 
-  
-  
+// Ha a felhasználó be van jelentkezve, de még nem írt véleményt, akkor jelenik meg az űrlap
+
+
 ?>
+
+
+
 <?php
-include("kapcsolat.php");
 
 $query = "SELECT v.*, u.unick FROM `velemeny` v 
           LEFT JOIN `user` u ON v.uid = u.uid 
           ORDER BY v.vid DESC";
 $result = mysqli_query($adb, $query);
 ?>
-
-<div class="velemeny-container">
-
-    <?php
-    if (mysqli_num_rows($result) > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-            $username = $row['unick'] ?? 'Ismeretlen felhasználó';
-            $comment = htmlspecialchars($row['comment']);
-            $rate = $row['rate'];
-            $date = $row['date'];
-
-            echo "<div class='velemeny'>";
-            echo "<strong>$username</strong> <span class='date'>($date)</span><br>";
-            echo "<p>$comment</p>";
-            echo "<p class='stars'>" . str_repeat("⭐", $rate) . "</p>";
-            echo "</div>";
-        }
-    } else {
-        echo "<p>Még nincs vélemény.</p>";
-    }
-    ?>
 </div>
 
 
@@ -476,6 +527,86 @@ $result = mysqli_query($adb, $query);
   
 
 </main>
+<script>
+// Vélemények frissítése
+function frissitVelemenyeket() {
+    fetch("velemeny_listazas.php")
+        .then(response => response.json())
+        .then(data => {
+            let container = document.getElementById("velemeny-lista");
+            container.innerHTML = ""; // Régi vélemények törlése
+
+            if (data.length > 0) {
+                data.forEach(velemeny => {
+                    let html = `
+                        <div class='velemeny'>
+                            <strong>${velemeny.username}</strong>
+                            <span class='date'>(${velemeny.date})</span><br>
+                            <p>${velemeny.comment}</p>
+                            <p class='stars'>${"⭐".repeat(velemeny.rate)}</p>
+                        </div>`;
+                    container.innerHTML += html;
+                });
+
+                // Kis késleltetés után görgessünk le a friss véleményekhez
+                setTimeout(() => {
+                    document.getElementById("velemeny-container").scrollIntoView({ behavior: "smooth" });
+                }, 300);
+            } else {
+                container.innerHTML = "<p>Még nincs vélemény.</p>";
+            }
+        })
+        .catch(error => console.error("Hiba a vélemények betöltésekor:", error));
+}
+
+document.getElementById("velemeny-form").addEventListener("submit", async function(event) {
+    event.preventDefault(); // Megakadályozzuk az alapértelmezett form elküldést
+
+    const formData = new FormData(this);
+
+    try {
+        const response = await fetch("velemeny.php", {
+            method: "POST",
+            body: formData,
+        });
+        const data = await response.json();
+
+        if (data.status === "success") {
+            // Frissítjük az oldalt
+            location.reload(); // Az oldal újratöltése
+        } else {
+            alert("Hiba: " + data.message); // Hibakezelés
+        }
+    } catch (error) {
+        console.error("Hálózati hiba:", error);
+    }
+});
+
+// Csillagok kiválasztásának kezelése
+let selectedRating = 0;
+const stars = document.querySelectorAll('.star');
+
+stars.forEach((star, index) => {
+    star.addEventListener('click', () => {
+        selectedRating = index + 1;
+        document.getElementById('csillag').value = selectedRating;
+        updateStars();
+    });
+});
+
+function updateStars() {
+    stars.forEach((star, index) => {
+        if (index < selectedRating) {
+            star.classList.add('selected');
+        } else {
+            star.classList.remove('selected');
+        }
+    });
+}
+
+
+
+</script>
 </body>
 </html>
 <style>
@@ -598,6 +729,10 @@ $result = mysqli_query($adb, $query);
 
 .star:hover, .star.selected {
   color: #f5b301;
+}
+.ratesz{
+  color:black;
+  text-align:center;
 }
 
 button {

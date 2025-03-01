@@ -3,7 +3,7 @@
         <div class="container-fluid header_top_container">
 
           <div class="contact_nav">
-            <a href="">
+            <a href="https://maps.app.goo.gl/WKaq4M62d9mHgN9v7" target="_blank">
               <i class="fa fa-map-marker" aria-hidden="true"></i>
               <span>
                 Lokáció
@@ -15,7 +15,7 @@
                 Telefonszám : +36 302960830
               </span>
             </a>
-            <a href="">
+            <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJNvvsRNPQXNgMKxkmXcZTBxSPZzwqgnjCKwhPmbdJZzCLdgcCbQxZsHSqrjZMjlKVtgbzg" target="_blank" >
               <i class="fa fa-envelope" aria-hidden="true"></i>
               <span>
                 bpkozmetika@gmail.com
@@ -25,7 +25,6 @@
           <div class="social_box">
       
             <a href="">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
             </a>
           </div>
         </div>

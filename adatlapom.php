@@ -89,7 +89,7 @@ h1 {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    max-width: 800px;
     margin: 50px auto;
     
 }
@@ -100,7 +100,7 @@ h1 {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #007BFF;
+    border: 3px solid rgb(0, 0, 0);
     display: block;
     margin: 0 auto;
 }

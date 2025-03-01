@@ -1,67 +1,43 @@
 <?php
 session_start();
 include("kapcsolat.php");
-if(isset($_SESSION['uid'])) {
-    // Biztonságos bemenetkezelés
-    $velemeny = mysqli_real_escape_string($adb, trim($_POST["rate"]));
-    $csillagok = isset($_POST["csillagok"]) ? intval($_POST["csillagok"]) : 1;
-    $userid = intval($_SESSION['uid']);
-    $datum = date("Y-m-d H:i:s");
 
-    // SQL lekérdezés a vélemény hozzáadásához
-    $ertekeles = "INSERT INTO `velemeny` (`uid`, `comment`, `rate`, `date`)
-    VALUES ('$userid', '$velemeny', '$csillagok', '$datum')";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_SESSION['uid'])) {
+        // Az aktuális felhasználó ID-ja
+        $userid = $_SESSION['uid'];
 
-    if (mysqli_query($adb, $ertekeles)) {
-        echo "";
+        // Ellenőrizzük, hogy van-e már vélemény a felhasználóhoz rendelve
+        $query = "SELECT COUNT(*) AS count FROM `velemeny` WHERE `uid` = $userid";
+        $result = mysqli_query($adb, $query);
+        $row = mysqli_fetch_assoc($result);
+
+        if ($row['count'] > 0) {
+            // Ha van már véleménye a felhasználónak
+            echo json_encode(["status" => "error", "message" => "Ön már értékelte a szolgáltatásunkat."]);
+        } else {
+            // Ha nincs véleménye, akkor az új vélemény mentése
+            if (isset($_POST["rate"]) && !empty($_POST["rate"]) && isset($_POST["csillagok"]) && !empty($_POST["csillagok"])) {
+                $velemeny = mysqli_real_escape_string($adb, trim($_POST["rate"]));
+                $csillagok = intval($_POST["csillagok"]); // A csillagok száma
+
+                $datum = date("Y-m-d H:i:s");
+
+                // SQL lekérdezés a vélemény beszúrásához
+                $ertekeles = "INSERT INTO `velemeny` (`uid`, `comment`, `rate`, `date`) VALUES ('$userid', '$velemeny', '$csillagok', '$datum')";
+
+                if (mysqli_query($adb, $ertekeles)) {
+                    echo json_encode(["status" => "success", "message" => "Köszönöm az értékelését."]);
+                } else {
+                    echo json_encode(["status" => "error", "message" => "Hiba történt a vélemény mentésekor."]);
+                }
+            } else {
+                echo json_encode(["status" => "error", "message" => "A vélemény szövege és csillagok szükségesek."]);
+            }
+        }
     } else {
-        echo "Hiba a beszúrásnál: " . mysqli_error($adb);
+        echo json_encode(["status" => "error", "message" => "Nem vagy bejelentkezve."]);
     }
-
-    // Lekérdezés a vélemények és értékelések megjelenítéséhez
-    $query = "SELECT * FROM `velemeny` ORDER BY `vid` DESC";  // Legújabb vélemények elöl
-    $result = mysqli_query($adb, $query);
-
-    ?>
-
-    <!DOCTYPE html>
-    <html lang="hu">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            .velemeny-container {
-                width: 50%;
-                margin: auto;
-                padding: 20px;
-            }
-            .velemeny {
-                border-bottom: 1px solid #ccc;
-                padding: 10px 0;
-            }
-            .velemeny strong {
-                font-size: 1.1em;
-            }
-            .velemeny .date {
-                color: gray;
-                font-size: 0.9em;
-            }
-            .stars {
-                color: gold;
-            }
-        </style>
-    </head>
-    <body>
-
-    <div class="velemeny-container">
-
-  
-     
-
-    <?php
-
-    mysqli_close($adb);
-} else {
-    die("Hiba: Nem vagy bejelentkezve.");
+    exit();
 }
 ?>
