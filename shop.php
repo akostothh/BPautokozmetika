@@ -27,15 +27,15 @@
 
         /* Kosár ikon és elrendezés */
         .cart {
-            position: fixed; /* Az ikon rögzített pozícióban lesz */
-            bottom: 20px; /* 20px távolság a képernyő aljától */
-            right: 20px; /* 20px távolság a képernyő jobb szélétől */
-            background-color: white; /* Kosár ikon háttérszín */
-            border-radius: 50%; /* Kör alakú háttér */
-            padding: 15px; /* A kör kerülete */
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Finom árnyék */
-            cursor: pointer; /* Kéz ikont mutat, amikor fölé viszik */
-            transition: transform 0.3s ease; /* Animáció a kattintásra */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
             z-index: 1;
         }
 
@@ -113,7 +113,7 @@
         }
 
         .product {
-            flex: 1 1 calc(33.333% - 20px); /* 3 oszlop */
+            flex: 1 1 calc(33.333% - 20px);
             background: transparent;
             border: 1px solid darkgray;
             border-radius: 8px;
@@ -218,44 +218,65 @@
         .remove-btn:hover {
             background-color: #c82333;
         }
+
         .buy {
-    background-color: #007BFF; /* Kék háttérszín */
-    color: white; /* Fehér szöveg */
-    border: none; /* Nincs szegély */
-    padding: 12px 25px; /* Kényelmes padding */
-    font-size: 16px; /* Normál szövegméret */
-    border-radius: 25px; /* Lekerekített sarkok */
-    cursor: pointer; /* Kéz ikon, amikor ráhúzzuk */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Animáció a színváltozáshoz */
-}
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
 
-.buy:hover {
-    background-color: #0056b3; /* Sötétebb kék, amikor a gombot fölé viszik */
-    transform: scale(1.05); /* Finom méretnövelés hover során */
-}
+        .buy:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
 
-.buy:active {
-    transform: scale(0.98); /* Gombnyomáskor kisebb lesz */
-}
-.continue {
-    background-color: transparent; /* Átlátszó háttér */
-    color: #888; /* Szürke szín a szövegnél */
-    border: none; /* Nincs keret */
-    padding: 10px 20px; /* Kényelmes belső margó */
-    font-size: 16px; /* Közepes méretű betűtípus */
-    cursor: pointer; /* Kéz ikon, amikor ráhúzzák */
-    transition: color 0.3s ease, background-color 0.3s ease; /* Finom átmenet színek változásakor */
-}
+        .buy:active {
+            transform: scale(0.98);
+        }
 
-.continue:hover {
-    color:rgb(62, 236, 129); /* A szöveg színének változása hover esetén */
-    background-color: #f0f0f0; /* Halvány szürke háttér hover esetén */
-}
+        .continue {
+            background-color: transparent;
+            color: #888;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
 
-.continue:active {
-    transform: scale(0.98); /* Gombnyomáskor kisebb lesz */
-}
+        .continue:hover {
+            color: rgb(62, 236, 129);
+            background-color: #f0f0f0;
+        }
 
+        .continue:active {
+            transform: scale(0.98);
+        }
+
+        /* Bankkártya adatok stílusa */
+        .card-details {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .card-details label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .card-details input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -284,97 +305,62 @@
                     <tbody id="cart-items"></tbody>
                 </table>
                 <p><strong>Összesen: <span id="cart-total">0 Ft</span></strong></p>
-                <!-- Vásárlás gomb -->
-<button class="continue" id="continueShoppingButton">Vásárlás Folytatása</button>
-<button class="buy" id="buyButton">Fizetés</button>
-
-
-
-<!-- Adatok kérése modal -->
-<div id="personalDataModal" class="modal">
-    <div class="modal-content">
-        <span class="modal-close" id="personalDataModalClose">&times;</span>
-        <h2>Személyes adatok</h2>
-        <form id="personalDataForm">
-            <label for="fullName">Teljes név:</label>
-            <input type="text" id="fullName" name="fullName" required><br><br>
-
-            <label for="email">Email cím:</label>
-            <input type="email" id="email" name="email" required><br><br>
-
-            <label for="address">Cím:</label>
-            <input type="text" id="address" name="address" required><br><br>
-            
-
-            <button type="button" id="nextButton">Tovább</button>
-        </form>
-    </div>
-</div>
-
-<!-- Fizetési mód modal -->
-<div id="paymentModal" class="modal">
-    <div class="modal-content">
-        <span class="modal-close" id="paymentModalClose">&times;</span>
-        <h2>Fizetési mód választás</h2>
-        <form id="paymentForm">
-            <label>
-                <input type="radio" name="payment" value="creditCard" required> Bankkártyás fizetés
-            </label><br>
-            <label>
-                <input type="radio" name="payment" value="paypal" required> PayPal
-            </label><br>
-            <label>
-                <input type="radio" name="payment" value="cash" required> Készpénz
-            </label><br><br>
-
-            <button type="submit" id="submitPayment">Fizetés</button>
-        </form>
-    </div>
-</div>
-
+                <button class="continue" id="continueShoppingButton">Vásárlás Folytatása</button>
+                <button class="buy" id="buyButton">Fizetés</button>
             </div>
         </div>
 
-        <!-- Felugró ablak a termékekhez -->
-        <div id="productModal" class="modal">
+        <!-- Személyes adatok modal -->
+        <div id="personalDataModal" class="modal">
             <div class="modal-content">
-                <span class="modal-close">&times;</span>
-                <h2 id="productTitle"></h2>
-                <img id="productImage" src="" alt="" style="max-width: 200px; margin-bottom: 20px;">
-                <p id="productDescription"></p>
-                <p id="productPrice"></p>
+                <span class="modal-close" id="personalDataModalClose">&times;</span>
+                <h2>Személyes adatok</h2>
+                <form id="personalDataForm">
+                    <label for="fullName">Teljes név:</label>
+                    <input type="text" id="fullName" name="fullName" required><br><br>
 
-                <!-- Darabszám input -->
-                <label for="quantity">Mennyiség:</label>
-                <input type="number" id="quantity" name="quantity" min="1" value="1" style="margin-bottom: 10px;">
-<!-- Kosár modal -->
-<div id="cart-modal" class="cart-modal">
-    <div class="cart-modal-content">
-        <span class="close">&times;</span>
-        <h3>Kosár tartalma</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Termék</th>
-                    <th>Ár</th>
-                    <th>Mennyiség</th>
-                    <th>Összesen</th>
-                    <th>Művelet</th>
-                </tr>
-            </thead>
-            <tbody id="cart-items"></tbody>
-        </table>
-        <p><strong>Összesen: <span id="cart-total">0 Ft</span></strong></p>
-        
-        
-    </div>
-</div>
+                    <label for="email">Email cím:</label>
+                    <input type="email" id="email" name="email" required><br><br>
 
-                <!-- Vásárlás gomb -->
-                <button id="buyButton" onclick="addToCart()">Kosárba</button>
+                    <label for="address">Cím:</label>
+                    <input type="text" id="address" name="address" required><br><br>
+
+                    <button type="button" id="nextButton">Tovább</button>
+                </form>
             </div>
         </div>
 
+        <!-- Fizetési mód modal -->
+        <div id="paymentModal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" id="paymentModalClose">&times;</span>
+                <h2>Fizetési mód választás</h2>
+                <form id="paymentForm">
+                    <label>
+                        <input type="radio" name="payment" value="creditCard" required> Bankkártyás fizetés
+                    </label><br>
+                    <label>
+                        <input type="radio" name="payment" value="cash" required> Készpénz
+                    </label><br><br>
+
+                    <!-- Bankkártya adatok -->
+                    <div id="cardDetails" class="card-details">
+                        <label for="cardNumber">Kártyaszám:</label>
+                        <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" required>
+
+                        <label for="cardExpiry">Lejárati dátum:</label>
+                        <input type="text" id="cardExpiry" name="cardExpiry" placeholder="MM/YY" required>
+
+                        <label for="cardCVC">CVC:</label>
+                        <input type="text" id="cardCVC" name="cardCVC" placeholder="123" required>
+                    </div>
+
+                    <button type="submit" id="submitPayment">Fizetés</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Termékek rész -->
         <section id="products">
             <div class="product-grid">
                 <?php
@@ -402,9 +388,28 @@
                     }
 
                     mysqli_close($adb);
+                    
                 ?>
             </div>
         </section>
+
+        <!-- Termék modal -->
+        <div id="productModal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <h2 id="productTitle"></h2>
+                <img id="productImage" src="" alt="" style="max-width: 200px; margin-bottom: 20px;">
+                <p id="productDescription"></p>
+                <p id="productPrice"></p>
+
+                <!-- Mennyiség input -->
+                <label for="quantity">Mennyiség:</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" style="margin-bottom: 10px;">
+
+                <!-- Kosárba gomb -->
+                <button id="addToCartButton" onclick="addToCart()">Kosárba</button>
+            </div>
+        </div>
     </main>
 
     <script>
@@ -418,7 +423,6 @@
         const cartButton = document.querySelector(".cart");
         const modalClose = document.querySelector(".modal-close");
         const productModal = document.getElementById("productModal");
-        
 
         modalClose.onclick = () => {
             productModal.style.display = 'none';
@@ -507,83 +511,88 @@
             updateCart();
             document.getElementById('productModal').style.display = 'none'; // Bezárja a felugró ablakot
         }
+
         // Modális ablakok
-const personalDataModal = document.getElementById("personalDataModal");
-const paymentModal = document.getElementById("paymentModal");
-const buyButton = document.getElementById("buyButton");
-const personalDataModalClose = document.getElementById("personalDataModalClose");
-const paymentModalClose = document.getElementById("paymentModalClose");
-const nextButton = document.getElementById("nextButton");
+        const personalDataModal = document.getElementById("personalDataModal");
+        const paymentModal = document.getElementById("paymentModal");
+        const buyButton = document.getElementById("buyButton");
+        const personalDataModalClose = document.getElementById("personalDataModalClose");
+        const paymentModalClose = document.getElementById("paymentModalClose");
+        const nextButton = document.getElementById("nextButton");
+        const cardDetails = document.getElementById("cardDetails");
 
+        // Személyes adatok modal bezárása
+        personalDataModalClose.addEventListener("click", () => {
+            personalDataModal.style.display = "none";
+        });
 
+        // Fizetési mód modal bezárása
+        paymentModalClose.addEventListener("click", () => {
+            paymentModal.style.display = "none";
+        });
 
-// Személyes adatok modal bezárása
-personalDataModalClose.addEventListener("click", () => {
-    personalDataModal.style.display = "none";
-});
+        // Tovább gomb
+        nextButton.addEventListener("click", () => {
+            const fullName = document.getElementById("fullName").value;
+            const email = document.getElementById("email").value;
+            const address = document.getElementById("address").value;
 
-// Fizetési mód modal bezárása
-paymentModalClose.addEventListener("click", () => {
-    paymentModal.style.display = "none";
-});
+            if (fullName && email && address) {
+                personalDataModal.style.display = "none";
+                paymentModal.style.display = "block";
+            } else {
+                alert("Kérem, töltse ki az összes mezőt!");
+            }
+        });
 
-// Tovább gomb
-nextButton.addEventListener("click", () => {
-    const fullName = document.getElementById("fullName").value;
-    const email = document.getElementById("email").value;
-    const address = document.getElementById("address").value;
+        // Bankkártya adatok megjelenítése
+        document.querySelectorAll('input[name="payment"]').forEach((radio) => {
+            radio.addEventListener("change", (e) => {
+                if (e.target.value === "creditCard") {
+                    cardDetails.style.display = "block";
+                } else {
+                    cardDetails.style.display = "none";
+                }
+            });
+        });
 
-    if (fullName && email && address) {
-        personalDataModal.style.display = "none";
-        paymentModal.style.display = "block";
-    } else {
-        alert("Kérem, töltse ki az összes mezőt!");
-    }
-});
+        // Fizetés elküldése
+        document.getElementById("paymentForm").addEventListener("submit", (event) => {
+            event.preventDefault();
+            
+            const paymentMethod = document.querySelector('input[name="payment"]:checked');
+            if (paymentMethod) {
+                if (paymentMethod.value === "creditCard") {
+                    const cardNumber = document.getElementById("cardNumber").value;
+                    const cardExpiry = document.getElementById("cardExpiry").value;
+                    const cardCVC = document.getElementById("cardCVC").value;
 
-// Fizetés elküldése
-document.getElementById("paymentForm").addEventListener("submit", (event) => {
-    event.preventDefault();
-    
-    const paymentMethod = document.querySelector('input[name="payment"]:checked');
-    if (paymentMethod) {
-        alert(`A fizetési mód: ${paymentMethod.value}`);
-        paymentModal.style.display = "none"; // Fizetési modal bezárása
-    } else {
-        alert("Kérem, válasszon egy fizetési módot!");
-    }
-});
+                    if (!cardNumber || !cardExpiry || !cardCVC) {
+                        alert("Kérem, töltse ki a bankkártya adatokat!");
+                        return;
+                    }
+                }
+                alert(`A fizetési mód: ${paymentMethod.value}`);
+                paymentModal.style.display = "none"; // Fizetési modal bezárása
+            } else {
+                alert("Kérem, válasszon egy fizetési módot!");
+            }
+        });
 
-// Külső kattintás, modal bezárás
-window.onclick = function(event) {
-    if (event.target == personalDataModal || event.target == paymentModal) {
-        personalDataModal.style.display = "none";
-        paymentModal.style.display = "none";
-    }
-};
-// Kosár tartalom ellenőrzése vásárlás előtt
-// Kosár tartalom ellenőrzése vásárlás előtt
-buyButton.addEventListener("click", () => {
-    if (cart.length === 0) {
-        alert("A kosár üres! Kérem, adjon hozzá terméket a kosárhoz.");
-        cartModal.style.display = "none";  // Kosár bezárása
-        window.location.href = "#products";  // Visszairányít a termékekhez
-    } else {
-        personalDataModal.style.display = "block";  // Ha van termék, akkor a személyes adatokat kérő modal jelenik meg
-    }
-});
+        // Kosár tartalom ellenőrzése vásárlás előtt
+        buyButton.addEventListener("click", () => {
+            if (cart.length === 0) {
+                alert("A kosár üres! Kérem, adjon hozzá terméket a kosárhoz.");
+                cartModal.style.display = "none";  // Kosár bezárása
+                window.location.href = "#products";  // Visszairányít a termékekhez
+            } else {
+                personalDataModal.style.display = "block";  // Ha van termék, akkor a személyes adatokat kérő modal jelenik meg
+            }
+        });
 
-document.getElementById("continueShoppingButton").addEventListener("click", () => {
-    cartModal.style.display = "none"; // Kosár modál bezárása
-});
-// Kosár bezárása az "X" gombbal
-const closeButton = document.querySelector(".cart-close-button"); // Az "X" gombot az osztálya alapján kereshetjük
-if (closeButton) {
-    closeButton.addEventListener("click", () => {
-        cartModal.style.display = "none"; // Kosár modál bezárása
-    });
-}
-
+        document.getElementById("continueShoppingButton").addEventListener("click", () => {
+            cartModal.style.display = "none"; // Kosár modál bezárása
+        });
     </script>
 </body>
 </html>
