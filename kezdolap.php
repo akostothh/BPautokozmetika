@@ -452,6 +452,7 @@ $query = "SELECT v.*, u.unick FROM `velemeny` v
           ORDER BY v.vid DESC";
 $result = mysqli_query($adb, $query);
 ?>
+<br>
 </div>
 
 
