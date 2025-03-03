@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // SQL lekérdezés végrehajtása
     $query = "
     INSERT INTO user (uid, uemail, unick, upd, uszuldatum, udatum, uip, session, ustatusz, ukomment)
-    VALUES (NULL, '$_POST[email]', '$_POST[username]', '$upd', '', NOW(), '', '', '', '')
+    VALUES (NULL, '$_POST[email]', '$_POST[username]', '$upd', '', NOW(), '', '', 'F', '')
     ";
 
     // Lekérdezés futtatása

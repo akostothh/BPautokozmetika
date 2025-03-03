@@ -21,7 +21,12 @@
                 bpkozmetika@gmail.com
               </span>
             </a>
-          </div>
+            <?php
+            if(isset($_SESSION['uid']) && $_SESSION['ustatusz'] == 'A'){
+              print("            <a href='?o=admin'>admin</a>");
+            }
+          ?>
+            </div>
           <div class="social_box">
       
             <a href="">

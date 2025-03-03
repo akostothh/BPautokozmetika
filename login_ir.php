@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = mysqli_fetch_assoc($userek);
         $_SESSION['uid'] = $user['uid'];
         $_SESSION['unick'] = $user['unick'];
+        $_SESSION['ustatusz'] = $user['ustatusz'];
         echo "<script>parent.location.href = './'</script>";
     }
     

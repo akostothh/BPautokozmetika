@@ -78,6 +78,9 @@
         case 'modositas':
           include("./adatlapom.php");
           break;
+          case 'admin':
+            include("./admin.php");
+            break;
                  
         }
        
